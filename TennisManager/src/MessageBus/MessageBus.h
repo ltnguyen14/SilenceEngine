@@ -22,6 +22,7 @@ public:
 			for (auto& receiver : m_receivers) {
 				receiver(m_messages.front());
 			}
+			m_messages.pop();
 		}
 	}
 

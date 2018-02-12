@@ -4,11 +4,11 @@
 #include "../MessageBus/MessageBus.h"
 
 class System {
-
+	// Base class for all systems
 public:
 	System(MessageBus* messageBus) {
-		this->m_messageBus = messageBus;
-		this->m_messageBus->addReceiver(this->getNotifyFunc());
+		m_messageBus = messageBus;
+		m_messageBus->addReceiver(this->getNotifyFunc());
 	}
 
 	virtual void update() {};

@@ -124,6 +124,8 @@
     <ClInclude Include="src\MessageBus\Message.h" />
     <ClInclude Include="src\MessageBus\MessageBus.h" />
     <ClInclude Include="src\stb_image.h" />
+    <ClInclude Include="src\System\InputSystem.h" />
+    <ClInclude Include="src\System\RenderSystem.h" />
     <ClInclude Include="src\System\System.h" />
   </ItemGroup>
   <ItemGroup>
