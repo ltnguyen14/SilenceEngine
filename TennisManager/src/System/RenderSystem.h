@@ -8,6 +8,9 @@ public:
 
 	void update()
 	{
+		Message* message = new Message("Hello", CHAT);
+		m_messageBus->sendMessage(*message);
+		delete(message);
 	}
 
 private:

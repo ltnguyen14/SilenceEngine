@@ -16,5 +16,8 @@ public:
 private:
 	void onNotify(Message message)
 	{
+		if (message.getType() == CHAT) {
+			std::cout << "INnputSystem: Got CHAT message" << std::endl;
+		}
 	}
 };
