@@ -1,15 +1,19 @@
 #include "System/InputSystem.h"
 #include "System/RenderSystem.h"
+#include "System/GameLogicSystem.h"
+
 
 int main() {
 	MessageBus messageBus;
-	InputSystem compA(&messageBus);
-	RenderSystem compB(&messageBus);
+	InputSystem inputSystem(&messageBus);
+	RenderSystem renderSystem(&messageBus);
+	GameLogicSystem gameLogic(&messageBus);
 
 	// This is supposed to act like a game loop.
 	while(true) {
-		compA.update();
-		compB.update();
+		inputSystem.update();
+		renderSystem.update();
+		gameLogic.update();
 		messageBus.notify();
 	}
 
