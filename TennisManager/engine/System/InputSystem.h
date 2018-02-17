@@ -4,7 +4,7 @@
 class InputSystem : public System
 {
 public:
-	InputSystem(MessageBus* messageBus, Window& window) : System(messageBus, window) {
+	InputSystem(MessageBus* messageBus, Window& window, ResManager& resManager) : System(messageBus, window, resManager) {
 		std::cout << "Initialize Input System" << std::endl;
 	}
 

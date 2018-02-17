@@ -6,7 +6,7 @@
 class RenderSystem : public System
 {
 public:
-	RenderSystem(MessageBus* messageBus, Window& window) : System(messageBus, window) {
+	RenderSystem(MessageBus* messageBus, Window& window, ResManager& resManager) : System(messageBus, window, resManager) {
 		std::cout << "Initialize Render System" << std::endl;
 	}
 

@@ -123,28 +123,40 @@
   <ItemGroup>
     <ClInclude Include="engine\Framework\Framework.h" />
     <ClInclude Include="engine\Framework\Graphical.h" />
+    <ClInclude Include="engine\Framework\Entities\GuiEntity.h" />
+    <ClInclude Include="engine\Framework\Renderers\GUIRenderer.h" />
     <ClInclude Include="engine\Framework\Window.h" />
     <ClInclude Include="engine\MessageBus\Message.h" />
     <ClInclude Include="engine\MessageBus\MessageBus.h" />
+    <ClInclude Include="engine\ResManager\ResManager.h" />
     <ClInclude Include="engine\SilenceEngine.h" />
-    <ClInclude Include="engine\stb_image.h" />
+    <ClInclude Include="engine\Tools\Texture\stb_image.h" />
     <ClInclude Include="engine\System\EngineSystems.h" />
     <ClInclude Include="engine\System\InputSystem.h" />
     <ClInclude Include="engine\System\RenderSystem.h" />
     <ClInclude Include="engine\System\System.h" />
     <ClInclude Include="engine\Tools\Math\glm.h" />
     <ClInclude Include="engine\Tools\Shader\Shader.h" />
+    <ClInclude Include="engine\Tools\Texture\Texture.h" />
     <ClInclude Include="game\TestGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp" />
+    <ClCompile Include="engine\Framework\Entities\GuiEntity.cpp" />
+    <ClCompile Include="engine\Framework\Renderers\GUIRenderer.cpp" />
     <ClCompile Include="engine\Framework\Window.cpp" />
+    <ClCompile Include="engine\ResManager\ResManager.cpp" />
     <ClCompile Include="engine\SilenceEngine.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
+    <ClCompile Include="engine\Tools\Texture\Texture.cpp" />
     <ClCompile Include="game\TestGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\gui.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\arrow_box.png" />
+    <Image Include="res\textures\gray_bg.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,12 +3,13 @@
 #include <functional>
 #include "../MessageBus/MessageBus.h"
 #include "../Framework/Framework.h"
+#include "../ResManager/ResManager.h"
 
 class System {
 	// Base class for all systems
 public:
-	System(MessageBus* messageBus, Window& window) 
-		:m_graphics(window)
+	System(MessageBus* messageBus, Window& window, ResManager& resManager) 
+		:m_graphics(window), m_resManager(resManager)
 	{
 		m_messageBus = messageBus;
 		m_messageBus->addReceiver(this->getNotifyFunc());
@@ -34,5 +35,6 @@ protected:
 
 	MessageBus * m_messageBus;
 	Graphics m_graphics;
+	ResManager m_resManager;
 
 };

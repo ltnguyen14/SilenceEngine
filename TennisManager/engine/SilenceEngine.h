@@ -17,7 +17,8 @@ public:
 
 private:
 	Window m_window;
+	ResManager m_resManager;
 	MessageBus * m_messageBus = new MessageBus;
-	RenderSystem* m_renderSystem = new RenderSystem(m_messageBus, m_window);
-	InputSystem* m_inputSystem = new InputSystem(m_messageBus, m_window);
+	RenderSystem* m_renderSystem = new RenderSystem(m_messageBus, m_window, m_resManager);
+	InputSystem* m_inputSystem = new InputSystem(m_messageBus, m_window, m_resManager);
 };
