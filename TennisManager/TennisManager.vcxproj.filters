@@ -51,6 +51,12 @@
     <ClInclude Include="engine\Framework\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Tools\Shader\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Tools\Math\glm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -65,5 +71,11 @@
     <ClCompile Include="engine\SilenceEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\Tools\Shader\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\gui.shader" />
   </ItemGroup>
 </Project>

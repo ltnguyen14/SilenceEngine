@@ -36,6 +36,7 @@ bool Window::init()
 
 	// Make current context
 	glfwMakeContextCurrent(m_window);
+	glfwSwapInterval(0);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 

@@ -12,6 +12,7 @@ public:
 	bool init();
 	void clear() const;
 	void update() const;
+	inline bool isRunning() { return !glfwWindowShouldClose(m_window); };
 
 private:
 	int m_width, m_height;

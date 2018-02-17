@@ -9,7 +9,11 @@ public:
 	void update() {
 		m_renderSystem->update();
 		m_inputSystem->update();
+
+		m_messageBus->notify();
 	}
+
+	inline bool isRunning() { return m_window.isRunning(); };
 
 private:
 	Window m_window;

@@ -132,13 +132,19 @@
     <ClInclude Include="engine\System\InputSystem.h" />
     <ClInclude Include="engine\System\RenderSystem.h" />
     <ClInclude Include="engine\System\System.h" />
+    <ClInclude Include="engine\Tools\Math\glm.h" />
+    <ClInclude Include="engine\Tools\Shader\Shader.h" />
     <ClInclude Include="game\TestGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp" />
     <ClCompile Include="engine\Framework\Window.cpp" />
     <ClCompile Include="engine\SilenceEngine.cpp" />
+    <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
     <ClCompile Include="game\TestGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\gui.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

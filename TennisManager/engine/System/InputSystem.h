@@ -18,6 +18,5 @@ public:
 private:
 	void onNotify(Message message)
 	{
-
 	}
 };

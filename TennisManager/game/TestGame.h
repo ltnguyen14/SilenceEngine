@@ -11,6 +11,11 @@ public:
 	void update() {
 		m_engine.update();
 	}
+
+	bool isRunning() {
+		return m_engine.isRunning();
+	}
+
 private:
 	SilenceEngine m_engine;
 };
