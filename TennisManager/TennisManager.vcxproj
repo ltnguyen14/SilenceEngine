@@ -121,16 +121,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\MessageBus\Message.h" />
-    <ClInclude Include="src\MessageBus\MessageBus.h" />
-    <ClInclude Include="src\stb_image.h" />
-    <ClInclude Include="src\System\GameLogicSystem.h" />
-    <ClInclude Include="src\System\InputSystem.h" />
-    <ClInclude Include="src\System\RenderSystem.h" />
-    <ClInclude Include="src\System\System.h" />
+    <ClInclude Include="engine\Framework\Framework.h" />
+    <ClInclude Include="engine\Framework\Graphical.h" />
+    <ClInclude Include="engine\Framework\Window.h" />
+    <ClInclude Include="engine\MessageBus\Message.h" />
+    <ClInclude Include="engine\MessageBus\MessageBus.h" />
+    <ClInclude Include="engine\SilenceEngine.h" />
+    <ClInclude Include="engine\stb_image.h" />
+    <ClInclude Include="engine\System\EngineSystems.h" />
+    <ClInclude Include="engine\System\InputSystem.h" />
+    <ClInclude Include="engine\System\RenderSystem.h" />
+    <ClInclude Include="engine\System\System.h" />
+    <ClInclude Include="game\TestGame.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="engine\Framework\Graphical.cpp" />
+    <ClCompile Include="engine\Framework\Window.cpp" />
+    <ClCompile Include="engine\SilenceEngine.cpp" />
+    <ClCompile Include="game\TestGame.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

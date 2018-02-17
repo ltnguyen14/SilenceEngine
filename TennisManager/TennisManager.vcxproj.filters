@@ -15,30 +15,54 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\stb_image.h">
+    <ClInclude Include="engine\Framework\Graphical.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MessageBus\Message.h">
+    <ClInclude Include="engine\MessageBus\Message.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MessageBus\MessageBus.h">
+    <ClInclude Include="engine\MessageBus\MessageBus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\System\System.h">
+    <ClInclude Include="engine\System\EngineSystems.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\System\InputSystem.h">
+    <ClInclude Include="engine\System\InputSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\System\RenderSystem.h">
+    <ClInclude Include="engine\System\RenderSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\System\GameLogicSystem.h">
+    <ClInclude Include="engine\System\System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\SilenceEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\TestGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
+    <ClCompile Include="engine\Framework\Graphical.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\TestGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\SilenceEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

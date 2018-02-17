@@ -2,11 +2,14 @@
 #include <iostream>
 #include <functional>
 #include "../MessageBus/MessageBus.h"
+#include "../Framework/Framework.h"
 
 class System {
 	// Base class for all systems
 public:
-	System(MessageBus* messageBus) {
+	System(MessageBus* messageBus, Window& window) 
+		:m_graphics(window)
+	{
 		m_messageBus = messageBus;
 		m_messageBus->addReceiver(this->getNotifyFunc());
 	}
@@ -30,5 +33,6 @@ protected:
 	}
 
 	MessageBus * m_messageBus;
+	Graphics m_graphics;
 
 };
