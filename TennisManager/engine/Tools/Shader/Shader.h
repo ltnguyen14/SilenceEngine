@@ -30,7 +30,7 @@ public:
 
 	//Set uniforms
 	void SetUniformMat4(const std::string& name, const glm::mat4 matrix) const;
-	void SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3) const;
+	void SetUniform4f(const std::string& name, const glm::vec4 value) const;
 	void SetUniform2f(const std::string& name, float v0, float v1) const;
 	unsigned int GetUniformLocation(const std::string& name) const;
 

@@ -7,6 +7,8 @@ public:
 	ResManager();
 	~ResManager();
 
+	Texture* getTexture(std::string textureName);
+
 private:
-	std::vector<Texture> m_textures;
+	std::vector<Texture*> m_textures;
 };

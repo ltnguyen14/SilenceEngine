@@ -14,6 +14,7 @@ public:
 	{
 		m_graphics.updateWindow();
 		m_graphics.clearWindow();
+		m_graphics.drawquad({ 0.0f, 0.0f }, 0.5, 0.5, { 0.2, 0.4, 0.8, 0.0 }, "arrow-right.png");
 	}
 
 private:

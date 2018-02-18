@@ -155,6 +155,7 @@
     <None Include="res\shaders\gui.shader" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\textures\arrow-right.png" />
     <Image Include="res\textures\arrow_box.png" />
     <Image Include="res\textures\gray_bg.png" />
   </ItemGroup>

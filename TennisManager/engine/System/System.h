@@ -9,7 +9,7 @@ class System {
 	// Base class for all systems
 public:
 	System(MessageBus* messageBus, Window& window, ResManager& resManager) 
-		:m_graphics(window), m_resManager(resManager)
+		:m_graphics(window, resManager)
 	{
 		m_messageBus = messageBus;
 		m_messageBus->addReceiver(this->getNotifyFunc());
@@ -35,6 +35,4 @@ protected:
 
 	MessageBus * m_messageBus;
 	Graphics m_graphics;
-	ResManager m_resManager;
-
 };

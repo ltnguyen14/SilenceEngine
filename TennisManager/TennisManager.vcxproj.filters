@@ -109,5 +109,8 @@
     <Image Include="res\textures\gray_bg.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\arrow-right.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

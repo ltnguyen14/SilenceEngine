@@ -17,6 +17,8 @@ void GUIRenderer::renderGUI(GuiEntity & gui)
 
 	// Shader and texture
 	m_shader.Bind();
+	m_shader.SetUniform4f("colour", gui.getColor());
+	gui.getTexture()->Bind(0);
 	//m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ std::get<1>(gui),{ 0, 0, 0 } }));
 
 	// VAO

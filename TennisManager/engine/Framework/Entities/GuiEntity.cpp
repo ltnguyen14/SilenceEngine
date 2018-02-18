@@ -1,6 +1,7 @@
 #include "GuiEntity.h"
 
-GuiEntity::GuiEntity(std::vector<float>& vertexPositions, const std::vector<float>& color)
+GuiEntity::GuiEntity(std::vector<float>& vertexPositions, glm::vec4 color, Texture* texture)
+	:m_texture(texture)
 {
 	addData(vertexPositions, color);
 }
@@ -10,7 +11,7 @@ GuiEntity::~GuiEntity()
 	deleteData();
 }
 
-void GuiEntity::addData(std::vector<float>& vertexPositions, const std::vector<float>& color)
+void GuiEntity::addData(std::vector<float>& vertexPositions, glm::vec4 color)
 {
 	if (m_vao != 0)
 		deleteData();
@@ -18,8 +19,16 @@ void GuiEntity::addData(std::vector<float>& vertexPositions, const std::vector<f
 	glGenVertexArrays(1, &m_vao);
 	glBindVertexArray(m_vao);
 
+	std::vector<float> textureCoords = {
+		0, 0,
+		0, 1,
+		1, 0,
+		1, 1,
+	};
+
+	m_color = color;
 	addVBO(2, vertexPositions);
-	addVBO(4, color);
+	addVBO(2, textureCoords);
 }
 
 void GuiEntity::addVBO(int dimensions, const std::vector<float>& data)
