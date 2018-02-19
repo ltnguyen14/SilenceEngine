@@ -1,11 +1,28 @@
 #include "Window.h"
 
+void cursor_position_callback(GLFWwindow * window, double xpos, double ypos)
+{
+	Window* win = (Window*)glfwGetWindowUserPointer(window);
+	win->mx = xpos;
+	win->my = ypos;
+}
+
+void mouse_button_callback(GLFWwindow * window, int button, int action, int mods)
+{
+	Window* win = (Window*)glfwGetWindowUserPointer(window);
+	win->m_Buttons[button] = action != GLFW_RELEASE;
+}
+
 Window::Window(int width, int height, std::string title)
 	:m_width(width), m_height(height), m_title(title)
 {
 	if (!init()) {
 		glfwTerminate();
 		return;
+	}
+	for (int i = 0; i < MAX_BUTTON; i++)
+	{
+		m_Buttons[i] = false;
 	}
 }
 
@@ -36,9 +53,12 @@ bool Window::init()
 
 	// Make current context
 	glfwMakeContextCurrent(m_window);
+	glfwSetWindowUserPointer(m_window, this);
 	glfwSwapInterval(0);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+	glfwSetMouseButtonCallback(m_window, mouse_button_callback);
+	glfwSetCursorPosCallback(m_window, cursor_position_callback);
 
 	// Initialize glew
 	if (glewInit() != GLEW_OK) {

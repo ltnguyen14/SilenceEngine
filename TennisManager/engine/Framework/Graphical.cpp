@@ -1,7 +1,7 @@
 #include "Graphical.h"
 #include <iostream>
 
-Graphics::Graphics(Window& window, ResManager& resManager)
+Graphics::Graphics(Window* window, ResManager& resManager)
 	:m_window(window), m_resManager(resManager)
 {
 }

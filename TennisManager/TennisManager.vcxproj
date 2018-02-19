@@ -125,7 +125,7 @@
     <ClInclude Include="engine\Framework\Graphical.h" />
     <ClInclude Include="engine\Framework\Entities\GuiEntity.h" />
     <ClInclude Include="engine\Framework\Renderers\GUIRenderer.h" />
-    <ClInclude Include="engine\Framework\Window.h" />
+    <ClInclude Include="engine\Framework\Window\Window.h" />
     <ClInclude Include="engine\MessageBus\Message.h" />
     <ClInclude Include="engine\MessageBus\MessageBus.h" />
     <ClInclude Include="engine\ResManager\ResManager.h" />
@@ -144,7 +144,7 @@
     <ClCompile Include="engine\Framework\Graphical.cpp" />
     <ClCompile Include="engine\Framework\Entities\GuiEntity.cpp" />
     <ClCompile Include="engine\Framework\Renderers\GUIRenderer.cpp" />
-    <ClCompile Include="engine\Framework\Window.cpp" />
+    <ClCompile Include="engine\Framework\Window\Window.cpp" />
     <ClCompile Include="engine\ResManager\ResManager.cpp" />
     <ClCompile Include="engine\SilenceEngine.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />

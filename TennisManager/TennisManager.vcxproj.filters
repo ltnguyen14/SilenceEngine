@@ -45,9 +45,6 @@
     <ClInclude Include="engine\Framework\Framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\Framework\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\Tools\Shader\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,15 +66,15 @@
     <ClInclude Include="engine\ResManager\ResManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Framework\Window\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\TestGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\Framework\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\SilenceEngine.cpp">
@@ -96,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\ResManager\ResManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Window\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

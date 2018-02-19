@@ -6,19 +6,20 @@
 class RenderSystem : public System
 {
 public:
-	RenderSystem(MessageBus* messageBus, Window& window, ResManager& resManager) : System(messageBus, window, resManager) {
+	RenderSystem(MessageBus* messageBus, Window* window, ResManager& resManager) : System(messageBus, window, resManager) {
 		std::cout << "Initialize Render System" << std::endl;
 	}
 
-	void update()
-	{
+	void update() {
 		m_graphics.updateWindow();
 		m_graphics.clearWindow();
-		m_graphics.drawquad({ 0.0f, 0.0f }, 0.5, 0.5, { 0.2, 0.4, 0.8, 0.0 }, "arrow-right.png");
+	}
+
+	void drawQuad(glm::vec2 position, float width, float height, glm::vec4 color, std::string textureName) {
+		m_graphics.drawquad(position, width, height, color, textureName);
 	}
 
 private:
-	void onNotify(Message message)
-	{
+	void onNotify(Message message) {
 	}
 };

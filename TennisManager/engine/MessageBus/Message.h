@@ -3,6 +3,7 @@
 
 enum MessageType {
 	CHAT,
+	MOUSE_INPUT
 };
 
 class Message {

@@ -10,6 +10,8 @@ public:
 
 	void update() {
 		m_engine.update();
+		m_engine.drawQuad({ 0, 0 }, 0.1, 0.2, {0.2f, 0.3f, 0.4f, 1.0f}, "gray_bg.png");
+		m_engine.drawQuad({ 0.5, 0 }, 0.1, 0.2, { 0.2f, 0.3f, 0.4f, 1.0f }, "gray_bg.png");
 	}
 
 	bool isRunning() {
