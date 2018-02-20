@@ -13,6 +13,8 @@ public:
 		// Handle keyboard input
 		
 	}
+	
+	void getMousePos(double& x, double& y);
 
 private:
 	void onNotify(Message message) {
