@@ -13,6 +13,13 @@ void mouse_button_callback(GLFWwindow * window, int button, int action, int mods
 	win->m_Buttons[button] = action != GLFW_RELEASE;
 }
 
+void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods)
+{
+	Window* win = (Window*)glfwGetWindowUserPointer(window);
+	win->m_Keys[key] = action != GLFW_RELEASE;
+}
+
+
 Window::Window(int width, int height, std::string title)
 	:m_width(width), m_height(height), m_title(title)
 {
@@ -59,6 +66,8 @@ bool Window::init()
 	glDepthFunc(GL_LESS);
 	glfwSetMouseButtonCallback(m_window, mouse_button_callback);
 	glfwSetCursorPosCallback(m_window, cursor_position_callback);
+	glfwSetKeyCallback(m_window, key_callback);
+
 
 	// Initialize glew
 	if (glewInit() != GLEW_OK) {
@@ -82,4 +91,20 @@ void Window::update() const
 {
 	glfwPollEvents();
 	glfwSwapBuffers(m_window);
+}
+
+bool Window::keyPressed(unsigned int keycode) const
+{
+	if (keycode >= MAX_KEY)
+		return false;
+
+	return m_Keys[keycode];
+}
+
+bool Window::mouseButtonPressed(unsigned int button) const
+{
+	if (button >= MAX_BUTTON)
+		return false;
+
+	return m_Buttons[button];
 }

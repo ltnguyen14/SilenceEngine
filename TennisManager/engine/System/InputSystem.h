@@ -15,6 +15,8 @@ public:
 	}
 	
 	void getMousePos(double& x, double& y);
+	bool keyPressed(unsigned int keycode) const;
+	bool mouseButtonPressed(unsigned int button) const;
 
 private:
 	void onNotify(Message message) {

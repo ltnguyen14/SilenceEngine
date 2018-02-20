@@ -138,7 +138,9 @@
     <ClInclude Include="engine\Tools\Math\glm.h" />
     <ClInclude Include="engine\Tools\Shader\Shader.h" />
     <ClInclude Include="engine\Tools\Texture\Texture.h" />
-    <ClInclude Include="game\TestGame.h" />
+    <ClInclude Include="game\GameState.h" />
+    <ClInclude Include="game\GameStates\IntroState.h" />
+    <ClInclude Include="game\StateManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp" />
@@ -150,8 +152,9 @@
     <ClCompile Include="engine\System\InputSystem.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
     <ClCompile Include="engine\Tools\Texture\Texture.cpp" />
-    <ClCompile Include="game\main.cpp" />
-    <ClCompile Include="game\TestGame.cpp" />
+    <ClCompile Include="game\game.cpp" />
+    <ClCompile Include="game\GameStates\IntroState.cpp" />
+    <ClCompile Include="game\StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\gui.shader" />
