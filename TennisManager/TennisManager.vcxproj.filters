@@ -75,6 +75,9 @@
     <ClInclude Include="game\GameStates\IntroState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\GameComponents\Paddle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -111,6 +114,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="game\GameStates\IntroState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\GameComponents\Paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

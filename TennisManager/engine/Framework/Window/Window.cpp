@@ -61,7 +61,7 @@ bool Window::init()
 	// Make current context
 	glfwMakeContextCurrent(m_window);
 	glfwSetWindowUserPointer(m_window, this);
-	glfwSwapInterval(0);
+	//glfwSwapInterval(0);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 	glfwSetMouseButtonCallback(m_window, mouse_button_callback);

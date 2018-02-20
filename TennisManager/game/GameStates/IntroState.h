@@ -1,5 +1,6 @@
 #pragma once
 #include "../GameState.h"
+#include "../GameComponents/Paddle.h"
 
 class IntroState : public GameState{
 public:
@@ -13,4 +14,6 @@ public:
 	void draw(StateManager* game);
 
 private:
+	void drawObj(StateManager * game, Paddle paddle);
+	Paddle m_userPaddle, m_ball;
 };
