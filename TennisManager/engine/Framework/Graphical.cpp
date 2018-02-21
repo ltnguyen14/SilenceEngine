@@ -16,7 +16,7 @@ void Graphics::drawquad(glm::vec2 position, float width, float height, glm::vec4
 	};
 
 	GuiEntity* entity = new GuiEntity(vertexPositions, color, m_resManager.getTexture(textureName));
-	m_guiRenderer.renderGUI(*entity);
+	m_guiRenderer.renderGUI(*entity, m_window);
 	delete(entity);
 }
 

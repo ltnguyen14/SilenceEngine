@@ -9,7 +9,7 @@ GUIRenderer::~GUIRenderer()
 {
 }
 
-void GUIRenderer::renderGUI(GuiEntity & gui)
+void GUIRenderer::renderGUI(GuiEntity & gui, Window* window)
 {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -19,6 +19,7 @@ void GUIRenderer::renderGUI(GuiEntity & gui)
 	m_shader.Bind();
 	m_shader.SetUniform4f("colour", gui.getColor());
 	gui.getTexture()->Bind(0);
+	m_shader.SetUniformMat4("projViewMatrix", makeOrthoMatrix(window));
 	//m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ std::get<1>(gui),{ 0, 0, 0 } }));
 
 	// VAO

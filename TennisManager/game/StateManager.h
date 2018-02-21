@@ -22,6 +22,7 @@ public:
 	}
 
 	SilenceEngine m_engine;
+	int m_width, m_height;
 
 private:
 	std::queue<GameState*> m_states;

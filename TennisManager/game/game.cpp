@@ -3,7 +3,7 @@
 
 int main() {
 	StateManager testGame(1280, 720, "Pong");
-	IntroState* introState = new IntroState();
+	IntroState* introState = new IntroState(&testGame);
 	testGame.pushState(introState);
 
 	while (testGame.isRunning()) {

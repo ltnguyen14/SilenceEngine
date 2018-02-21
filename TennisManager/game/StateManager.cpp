@@ -3,7 +3,7 @@
 
 
 StateManager::StateManager(int width, int height, std::string title)
-	:m_engine(width, height, title)
+	:m_engine(width, height, title), m_width(width), m_height(height)
 {
 }
 

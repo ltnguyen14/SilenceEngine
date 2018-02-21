@@ -7,7 +7,7 @@ public:
 	GUIRenderer();
 	~GUIRenderer();
 
-	void renderGUI(GuiEntity& gui);
+	void renderGUI(GuiEntity& gui, Window* window);
 
 private:
 	Shader m_shader;

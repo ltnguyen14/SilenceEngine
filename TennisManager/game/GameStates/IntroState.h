@@ -4,7 +4,7 @@
 
 class IntroState : public GameState{
 public:
-	IntroState();
+	IntroState(StateManager* game);
 
 	void Init();
 	void Cleanup();
@@ -15,5 +15,6 @@ public:
 
 private:
 	void drawObj(StateManager * game, Paddle paddle);
+	bool checkCollision(Paddle object_1, Paddle object_2);
 	Paddle m_userPaddle, m_ball;
 };

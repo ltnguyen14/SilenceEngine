@@ -8,7 +8,8 @@ Paddle::Paddle(glm::vec2 position, glm::vec4 color, glm::vec2 dimension, std::st
 	m_texture = texture;
 }
 
-void Paddle::setPosition(glm::vec2 position)
+void Paddle::moveUp(float amount)
 {
-	m_position = position;
+	m_position.y += amount;
 }
+

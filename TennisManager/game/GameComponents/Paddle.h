@@ -6,7 +6,7 @@ class Paddle {
 public:
 	Paddle(glm::vec2 position, glm::vec4 color, glm::vec2 dimension, std::string texture);
 
-	void setPosition(glm::vec2 position);
+	void moveUp(float amount);
 
 	inline glm::vec2 getPositions() { return m_position; };
 	inline glm::vec4 getColor() { return m_color; };

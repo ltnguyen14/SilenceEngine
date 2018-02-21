@@ -18,6 +18,9 @@ public:
 
 	inline bool isRunning() { return !glfwWindowShouldClose(m_window); };
 	inline void getMousePos(double& x, double& y) { x = mx; y = my; };
+	inline int getWidth() { return m_width; };
+	inline int getHeight() { return m_height; };
+
 	bool keyPressed(unsigned int keycode) const;
 	bool mouseButtonPressed(unsigned int button) const;
 
