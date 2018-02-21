@@ -16,5 +16,5 @@ public:
 private:
 	void drawObj(StateManager * game, Paddle paddle);
 	bool checkCollision(Paddle object_1, Paddle object_2);
-	Paddle m_userPaddle, m_ball;
+	Paddle m_userPaddle, m_oppPaddle, m_ball;
 };
