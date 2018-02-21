@@ -37,11 +37,13 @@ void IntroState::handleEvents(StateManager * game)
 		m_ball.setVelocity({ m_ball.getVelocity().x, BALL_SPEED });
 
 	// Collision between user paddle and ball
-	if (checkCollision(m_userPaddle, m_ball))
-		if (m_ball.getPositions().y < m_userPaddle.getPositions().y)
-			m_ball.setVelocity({ BALL_SPEED, -BALL_SPEED });
+	if (checkCollision(m_userPaddle, m_ball)) {
+		float distance = m_ball.getPositions().y - m_userPaddle.getPositions().y;
+		if (distance < 0)
+			m_ball.setVelocity({ BALL_SPEED * (1 + std::abs(distance) / m_userPaddle.getDimensions().y), -BALL_SPEED });
 		else
-			m_ball.setVelocity({ BALL_SPEED, BALL_SPEED });
+			m_ball.setVelocity({ BALL_SPEED * (1 + std::abs(distance) / m_userPaddle.getDimensions().y), BALL_SPEED });
+	}
 
 	// Collision between opponent paddle and ball
 	if (checkCollision(m_oppPaddle, m_ball))
@@ -51,9 +53,25 @@ void IntroState::handleEvents(StateManager * game)
 			m_ball.setVelocity({ -BALL_SPEED, BALL_SPEED });
 
 	// Handle movement for opponent paddle and ball
-	m_oppPaddle.setVelocity({ 0, m_ball.getVelocity().y });
+	if (m_oppPaddle.getPositions().y < m_ball.getPositions().y)
+		m_oppPaddle.setVelocity({ 0, USER_SPEED });
+
+	if (m_oppPaddle.getPositions().y > m_ball.getPositions().y)
+		m_oppPaddle.setVelocity({ 0, -USER_SPEED });
+
 	m_oppPaddle.move(m_oppPaddle.getVelocity());
 	m_ball.move(m_ball.getVelocity());
+
+	// Reset game
+	if (m_ball.getPositions().x < -10 || m_ball.getPositions().x > game->m_width) {
+		m_ball.setPosition({ game->m_width / 2, game->m_height / 2 });
+		m_ball.setVelocity({ -BALL_SPEED, 0 });
+
+		m_userPaddle.setPosition({ game->m_width / 32, game->m_height / 2 });
+
+		m_oppPaddle.setPosition({ game->m_width - game->m_width / 32, game->m_height / 2 });
+		m_oppPaddle.setVelocity({ 0, 0 });
+	}
 }
 
 void IntroState::update(StateManager * game)

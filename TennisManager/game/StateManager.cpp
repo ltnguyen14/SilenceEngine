@@ -22,7 +22,7 @@ void StateManager::pushState(GameState * state)
 	m_states.push(state);
 }
 
-void StateManager::popState(GameState * state)
+void StateManager::popState()
 {
 	m_states.pop();
 }

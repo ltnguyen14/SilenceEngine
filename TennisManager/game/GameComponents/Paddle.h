@@ -9,6 +9,7 @@ public:
 	void moveUp(float amount);
 	void move(glm::vec2 amount);
 	void setVelocity(glm::vec2 velocity) { m_velocity = velocity; };
+	void setPosition(glm::vec2 position) { m_position = position; };
 
 	inline glm::vec2 getPositions() { return m_position; };
 	inline glm::vec4 getColor() { return m_color; };
