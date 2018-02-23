@@ -10,6 +10,9 @@ ResManager::ResManager()
 
 	Texture* texture3 = new Texture("arrow-right.png");
 	m_textures.push_back(texture3);
+
+	Texture* texture4 = new Texture("../Fonts/roboto.png");
+	m_textures.push_back(texture4);
 }
 
 ResManager::~ResManager()

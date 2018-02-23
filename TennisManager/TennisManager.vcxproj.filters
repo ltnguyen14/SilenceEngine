@@ -81,6 +81,15 @@
     <ClInclude Include="engine\Tools\Math\Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Framework\Renderers\TextRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Text\MetaFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Text\TextObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -125,9 +134,20 @@
     <ClCompile Include="engine\Tools\Math\Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\Framework\Renderers\TextRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Text\MetaFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Text\TextObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\gui.shader" />
+    <None Include="res\shaders\text.shader" />
+    <None Include="res\fonts\roboto.fnt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\arrow_box.png">
@@ -137,6 +157,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\textures\arrow-right.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\fonts\roboto.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -81,9 +81,11 @@ void IntroState::update(StateManager * game)
 
 void IntroState::draw(StateManager * game)
 {
+	drawObj(game, m_ball);
 	drawObj(game, m_userPaddle);
 	drawObj(game, m_oppPaddle);
-	drawObj(game, m_ball);
+
+	game->m_engine.m_renderSystem->renderText({ 500, 500 }, "Hello World", 200, {0.4f, 0.2f, 0.6f, 1.0f});
 }
 
 void IntroState::drawObj(StateManager * game, Paddle paddle)

@@ -20,3 +20,9 @@ void Graphics::drawquad(glm::vec2 position, float width, float height, glm::vec4
 	delete(entity);
 }
 
+void Graphics::drawText(glm::vec2 position, std::string content, float width, glm::vec4 color)
+{
+	m_textRenderer.AddText(content, position, width, color);
+	m_textRenderer.RenderText(m_window);
+}
+

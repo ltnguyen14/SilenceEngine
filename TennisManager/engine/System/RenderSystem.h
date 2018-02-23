@@ -19,6 +19,10 @@ public:
 		m_graphics.drawquad(position, width, height, color, textureName);
 	}
 
+	void renderText(glm::vec2 position, std::string content, float width, glm::vec4 color) {
+		m_graphics.drawText(position, content, width, color);
+	}
+
 private:
 	void onNotify(Message message) {
 	}

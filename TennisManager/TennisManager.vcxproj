@@ -125,6 +125,9 @@
     <ClInclude Include="engine\Framework\Graphical.h" />
     <ClInclude Include="engine\Framework\Entities\GuiEntity.h" />
     <ClInclude Include="engine\Framework\Renderers\GUIRenderer.h" />
+    <ClInclude Include="engine\Framework\Renderers\TextRenderer.h" />
+    <ClInclude Include="engine\Framework\Text\MetaFile.h" />
+    <ClInclude Include="engine\Framework\Text\TextObj.h" />
     <ClInclude Include="engine\Framework\Window\Window.h" />
     <ClInclude Include="engine\MessageBus\Message.h" />
     <ClInclude Include="engine\MessageBus\MessageBus.h" />
@@ -148,6 +151,9 @@
     <ClCompile Include="engine\Framework\Graphical.cpp" />
     <ClCompile Include="engine\Framework\Entities\GuiEntity.cpp" />
     <ClCompile Include="engine\Framework\Renderers\GUIRenderer.cpp" />
+    <ClCompile Include="engine\Framework\Renderers\TextRenderer.cpp" />
+    <ClCompile Include="engine\Framework\Text\MetaFile.cpp" />
+    <ClCompile Include="engine\Framework\Text\TextObj.cpp" />
     <ClCompile Include="engine\Framework\Window\Window.cpp" />
     <ClCompile Include="engine\ResManager\ResManager.cpp" />
     <ClCompile Include="engine\SilenceEngine.cpp" />
@@ -161,9 +167,12 @@
     <ClCompile Include="game\StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\fonts\roboto.fnt" />
     <None Include="res\shaders\gui.shader" />
+    <None Include="res\shaders\text.shader" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\fonts\roboto.png" />
     <Image Include="res\textures\arrow-right.png" />
     <Image Include="res\textures\arrow_box.png" />
     <Image Include="res\textures\gray_bg.png" />
