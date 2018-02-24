@@ -20,5 +20,5 @@ glm::mat4 makeProjectionMatrix(float fov)
 
 glm::mat4 makeOrthoMatrix(Window* window)
 {
-	return glm::ortho(0.0f, (float)window->getWidth(), 0.0f, (float)window->getHeight());
+	return glm::ortho(0.0f, (float)window->getWidth(), (float)window->getHeight(), 0.0f);
 }

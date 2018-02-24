@@ -1,5 +1,5 @@
 #pragma once
-#include "../engine/SilenceEngine.h"
+#include "../SilenceEngine.h"
 #include <queue>
 
 class GameState;

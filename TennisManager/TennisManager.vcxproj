@@ -143,9 +143,10 @@
     <ClInclude Include="engine\Tools\Shader\Shader.h" />
     <ClInclude Include="engine\Tools\Texture\Texture.h" />
     <ClInclude Include="game\GameComponents\Paddle.h" />
-    <ClInclude Include="game\GameState.h" />
+    <ClInclude Include="engine\GameSkeleton\GameState.h" />
     <ClInclude Include="game\GameStates\IntroState.h" />
-    <ClInclude Include="game\StateManager.h" />
+    <ClInclude Include="engine\GameSkeleton\StateManager.h" />
+    <ClInclude Include="minecraftClone\GameStates\IntroState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp" />
@@ -164,7 +165,9 @@
     <ClCompile Include="game\game.cpp" />
     <ClCompile Include="game\GameComponents\Paddle.cpp" />
     <ClCompile Include="game\GameStates\IntroState.cpp" />
-    <ClCompile Include="game\StateManager.cpp" />
+    <ClCompile Include="engine\GameSkeleton\StateManager.cpp" />
+    <ClCompile Include="minecraftClone\game.cpp" />
+    <ClCompile Include="minecraftClone\GameStates\IntroState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\fonts\roboto.fnt" />

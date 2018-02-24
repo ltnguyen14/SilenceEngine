@@ -9,7 +9,7 @@ TextObj::~TextObj()
 	deleteData();
 }
 
-void TextObj::AddData(std::string text, glm::vec2 position, float width, glm::vec4 color, MetaFile & metaFile)
+void TextObj::AddData(std::string text, glm::vec2 position, float width, glm::vec4 color, bool CENTER_FLAG, MetaFile & metaFile)
 {
 	if (m_vao != 0)
 		deleteData();

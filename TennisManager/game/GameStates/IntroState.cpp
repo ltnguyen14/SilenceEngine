@@ -22,10 +22,10 @@ void IntroState::Cleanup()
 void IntroState::handleEvents(StateManager * game)
 {
 	// Handle movement for user paddle
-	if (game->m_engine.m_inputSystem->keyPressed(GLFW_KEY_W))
+	if (game->m_engine.m_inputSystem->keyPressed(GLFW_KEY_S))
 		if (m_userPaddle.getPositions().y + m_userPaddle.getDimensions().y / 2 + USER_SPEED < game->m_height)
 			m_userPaddle.moveUp(USER_SPEED);
-	if (game->m_engine.m_inputSystem->keyPressed(GLFW_KEY_S))
+	if (game->m_engine.m_inputSystem->keyPressed(GLFW_KEY_W))
 		if (m_userPaddle.getPositions().y - m_userPaddle.getDimensions().y / 2 - USER_SPEED > 0)
 			m_userPaddle.moveUp(-USER_SPEED);
 
@@ -85,7 +85,7 @@ void IntroState::draw(StateManager * game)
 	drawObj(game, m_userPaddle);
 	drawObj(game, m_oppPaddle);
 
-	game->m_engine.m_renderSystem->renderText({ 500, 500 }, "Hello World", 200, {0.4f, 0.2f, 0.6f, 1.0f});
+	game->m_engine.m_renderSystem->renderText({ game->m_width/2, 0 }, "Hello World", 200, {0.4f, 0.2f, 0.6f, 1.0f});
 }
 
 void IntroState::drawObj(StateManager * game, Paddle paddle)

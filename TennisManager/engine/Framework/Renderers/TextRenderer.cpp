@@ -26,7 +26,7 @@ void TextRenderer::RenderText(Window* window)
 		textObj->bindVAO();
 		m_shader.SetUniform4f("colour", { color.r, color.g, color.b, 0 });
 		m_shader.SetUniformMat4("projViewMatrix", makeOrthoMatrix(window));
-		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ position.x, position.y, 0 },{ 0, 0, 0 }));
+		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ position.x, position.y, 0 }, { 0, 0, 0 }));
 
 		glDrawArrays(GL_TRIANGLES, 0, textObj->getVertCount());
 		delete(textObj);
@@ -37,10 +37,10 @@ void TextRenderer::RenderText(Window* window)
 	glEnable(GL_DEPTH_TEST);
 }
 
-void TextRenderer::AddText(std::string text, glm::vec2 position, float width, glm::vec4 color)
+void TextRenderer::AddText(std::string text, glm::vec2 position, float width, glm::vec4 color, bool CENTER_FLAG)
 {
 	TextObj* textObj = new TextObj();
-	textObj->AddData(text, position, width, color, m_metaFile);
+	textObj->AddData(text, position, width, color, CENTER_FLAG, m_metaFile);
 	m_texts.push_back(textObj);
 }
 

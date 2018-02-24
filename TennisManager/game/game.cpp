@@ -1,7 +1,7 @@
-#include "StateManager.h"
+#include "../engine/GameSkeleton/StateManager.h"
 #include "GameStates/IntroState.h"
 
-int main() {
+void pong() {
 	StateManager testGame(1280, 720, "Pong");
 	IntroState* introState = new IntroState(&testGame);
 	testGame.pushState(introState);

@@ -1,6 +1,5 @@
 #pragma once
 #include "../../engine/GameSkeleton/GameState.h"
-#include "../GameComponents/Paddle.h"
 
 class IntroState : public GameState{
 public:
@@ -14,7 +13,5 @@ public:
 	void draw(StateManager* game);
 
 private:
-	void drawObj(StateManager * game, Paddle paddle);
-	bool checkCollision(Paddle object_1, Paddle object_2);
-	Paddle m_userPaddle, m_oppPaddle, m_ball;
+
 };

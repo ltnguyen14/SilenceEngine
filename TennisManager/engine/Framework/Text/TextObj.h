@@ -8,7 +8,7 @@ public:
 	TextObj();
 	~TextObj();
 
-	void AddData(std::string text, glm::vec2 position, float width, glm::vec4 color, MetaFile& metaFile);
+	void AddData(std::string text, glm::vec2 position, float width, glm::vec4 color, bool CENTER_FLAG, MetaFile& metaFile);
 	void bindVAO() const;
 
 	inline glm::vec2 getPosition() const { return m_position; };

@@ -13,7 +13,7 @@ public:
 	~TextRenderer();
 
 	void RenderText(Window* window);
-	void AddText(std::string text, glm::vec2 position, float width, glm::vec4 color);
+	void AddText(std::string text, glm::vec2 position, float width, glm::vec4 color, bool CENTER_FLAG = false);
 
 private:
 
