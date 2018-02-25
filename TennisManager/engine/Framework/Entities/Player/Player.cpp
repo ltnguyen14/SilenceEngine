@@ -5,6 +5,9 @@ Player::Player(Window* window)
 	:m_window(window)
 {
 	position = { 0, 0, -2 };
+
+	old_x = static_cast<int>(m_window->getWidth() / 2);
+	old_y = static_cast<int>(m_window->getHeight() / 2);
 }
 
 void Player::handleInput()
@@ -57,9 +60,8 @@ void Player::mouseInput()
 	change_x = new_x - old_x;
 	change_y = new_y - old_y;
 
-	std::cout << old_x << std::endl;
-	rotation.y += change_x * 0.005;
-	rotation.x += change_y * 0.005;
+	rotation.y += change_x * 0.05;
+	rotation.x += change_y * 0.05;
 
 	if (rotation.x >  BOUND) rotation.x = BOUND;
 	else if (rotation.x < -BOUND) rotation.x = -BOUND;
@@ -67,10 +69,6 @@ void Player::mouseInput()
 	if (rotation.y >  360) rotation.y = 0;
 	else if (rotation.y < 0)    rotation.y = 360;
 
-	auto cx = static_cast<int>(m_window->getWidth() / 2);
-	auto cy = static_cast<int>(m_window->getHeight() / 2);
-
-	m_window->setPosition(cx, cy);
-	m_window->getMousePos(old_x, old_y);
+	m_window->setPosition(m_window->getWidth() / 2, m_window->getHeight() / 2);
 }
 
