@@ -186,6 +186,7 @@
     <Image Include="res\textures\arrow-right.png" />
     <Image Include="res\textures\arrow_box.png" />
     <Image Include="res\textures\gray_bg.png" />
+    <Image Include="res\textures\Test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -20,7 +20,6 @@ void GUIRenderer::renderGUI(GuiEntity & gui, Window* window)
 	m_shader.SetUniform4f("colour", gui.getColor());
 	gui.getTexture()->Bind(0);
 	m_shader.SetUniformMat4("projViewMatrix", makeOrthoMatrix(window));
-	//m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ std::get<1>(gui),{ 0, 0, 0 } }));
 
 	// VAO
 	gui.bindVAO();

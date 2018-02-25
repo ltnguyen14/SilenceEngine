@@ -190,5 +190,8 @@
     <Image Include="res\fonts\roboto.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\Test.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

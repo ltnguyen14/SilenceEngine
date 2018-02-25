@@ -4,7 +4,7 @@
 
 IntroState::IntroState(StateManager* game)
 {
-	
+	game->m_engine.m_renderSystem->addCube({ 500, 500, -120 }, {100, 100, 100}, "Test.png");
 }
 
 void IntroState::Init()
@@ -26,5 +26,6 @@ void IntroState::update(StateManager * game)
 
 void IntroState::draw(StateManager * game)
 {
+	game->m_engine.m_renderSystem->renderCubes();
 }
 

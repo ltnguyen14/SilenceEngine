@@ -23,6 +23,14 @@ public:
 		m_graphics.drawText(position, content, width, color);
 	}
 
+	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture) {
+		m_graphics.addCube(position, scale, texture);
+	}
+
+	void renderCubes() {
+		m_graphics.renderCubes();
+	}
+
 private:
 	void onNotify(Message message) {
 	}

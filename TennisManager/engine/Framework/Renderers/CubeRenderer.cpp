@@ -26,6 +26,31 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 			-scale.x, -scale.y, -scale.z,
 		},
 		{
+			// Front
+			0, 1, 2,
+			2, 3, 0,
+
+			// Back
+			4, 5, 6,
+			6, 7, 4,
+
+			// Left
+			0, 1, 5,
+			5, 4, 0,
+
+			// Right
+			3, 2, 6,
+			6, 7, 3,
+
+			// Top
+			0, 4, 7,
+			7, 3, 0,
+
+			// Bottom
+			1, 2, 6,
+			6, 5, 1
+		},
+		{
 			0, 1,
 			1, 1,
 			1, 0,
@@ -45,17 +70,15 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 void CubeRenderer::renderCubes(Window * window)
 {
 	m_shader.Bind();
-	m_shader.SetUniformMat4("projViewMatrix", camera.getProjectionViewMatrix());
-	m_texture.Bind(0);
+	//m_shader.SetUniformMat4("projViewMatrix", camera.getProjectionViewMatrix());
+	m_shader.SetUniformMat4("projViewMatrix", makeProjectionMatrix(45));
 
-	for (auto& quad : m_quads)
+
+	for (auto& cube : m_cubes)
 	{
-		std::get<0>(quad)->bindVAO();
-		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix({ std::get<1>(quad),{ 0, 0, 0 } }));
-		GLCALL(glDrawElements(GL_TRIANGLES, std::get<0>(quad)->getIndicesCount(), GL_UNSIGNED_INT, nullptr));
+		cube->bindVAO();
+		cube->getTexture().Bind(0);
+		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix(cube->getPosition(), { 0, 0, 0 }));
+		glDrawElements(GL_TRIANGLES, cube->getIndicesCount(), GL_UNSIGNED_INT, nullptr);
 	}
-	for (auto& quad : m_quads)
-		delete(std::get<0>(quad));
-
-	m_quads.clear();
 }

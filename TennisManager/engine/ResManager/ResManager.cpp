@@ -13,6 +13,9 @@ ResManager::ResManager()
 
 	Texture* texture4 = new Texture("../Fonts/roboto.png");
 	m_textures.push_back(texture4);
+
+	Texture* texture5 = new Texture("Test.png");
+	m_textures.push_back(texture5);
 }
 
 ResManager::~ResManager()

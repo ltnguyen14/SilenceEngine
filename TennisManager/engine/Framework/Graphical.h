@@ -17,7 +17,8 @@ public:
 	void drawquad(glm::vec2 position, float width, float height, glm::vec4 color, std::string textureName);
 	void drawText(glm::vec2 position, std::string content, float width, glm::vec4 color);
 
-	void addCube(glm::vec3 position);
+	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture);
+	void renderCubes();
 
 private:
 	Window* m_window;
