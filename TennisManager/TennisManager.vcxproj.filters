@@ -93,6 +93,15 @@
     <ClInclude Include="minecraftClone\GameStates\IntroState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\CubeEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Renderers\CubeRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -152,11 +161,21 @@
     <ClCompile Include="minecraftClone\GameStates\IntroState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\CubeEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Renderers\CubeRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\gui.shader" />
     <None Include="res\shaders\text.shader" />
     <None Include="res\fonts\roboto.fnt" />
+    <None Include="res\shaders\basic.shader" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\arrow_box.png">

@@ -26,3 +26,7 @@ void Graphics::drawText(glm::vec2 position, std::string content, float width, gl
 	m_textRenderer.RenderText(m_window);
 }
 
+void Graphics::addCube(glm::vec3 position)
+{
+}
+
