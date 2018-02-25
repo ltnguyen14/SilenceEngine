@@ -6,6 +6,8 @@
 #include "Renderers/TextRenderer.h"
 #include "Renderers/CubeRenderer.h"
 #include "../ResManager/ResManager.h"
+#include "Entities/Player/Player.h"
+#include "Entities/Camera.h"
 
 class Graphics {
 public:
@@ -18,7 +20,10 @@ public:
 	void drawText(glm::vec2 position, std::string content, float width, glm::vec4 color);
 
 	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture);
-	void renderCubes();
+	void renderCubes(Camera* camera);
+
+	Player* createPlayer();
+	Camera* getCamera() { return m_camera; };
 
 private:
 	Window* m_window;
@@ -26,4 +31,6 @@ private:
 	TextRenderer m_textRenderer;
 	ResManager m_resManager;
 	CubeRenderer m_cubeRenderer;
+	Player * m_player = new Player(m_window);
+	Camera * m_camera = new Camera(m_window);
 };

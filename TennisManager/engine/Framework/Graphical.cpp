@@ -31,9 +31,15 @@ void Graphics::addCube(glm::vec3 position, glm::vec3 scale, const std::string & 
 	m_cubeRenderer.addCube(position, scale, texture);
 }
 
-void Graphics::renderCubes()
+void Graphics::renderCubes(Camera* camera)
 {
-	m_cubeRenderer.renderCubes(m_window);
+	m_cubeRenderer.renderCubes(m_window, camera);
+}
+
+Player * Graphics::createPlayer()
+{
+	m_camera->hookEntity(*m_player);
+	return m_player;
 }
 
 

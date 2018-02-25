@@ -27,9 +27,12 @@ public:
 		m_graphics.addCube(position, scale, texture);
 	}
 
-	void renderCubes() {
-		m_graphics.renderCubes();
+	void renderCubes(Camera* camera) {
+		m_graphics.renderCubes(camera);
 	}
+
+	Player* createPlayer() { return m_graphics.createPlayer(); };
+	Camera* getCamera() { return m_graphics.getCamera(); };
 
 private:
 	void onNotify(Message message) {

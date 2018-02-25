@@ -1,9 +1,9 @@
 #pragma once
 #include "../../engine/GameSkeleton/GameState.h"
 
-class IntroState : public GameState{
+class TestState : public GameState{
 public:
-	IntroState(StateManager* game);
+	TestState(StateManager* game);
 
 	void Init();
 	void Cleanup();
@@ -13,5 +13,6 @@ public:
 	void draw(StateManager* game);
 
 private:
-
+	Player* m_player;
+	Camera* m_camera;
 };

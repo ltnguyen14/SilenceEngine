@@ -15,6 +15,7 @@ public:
 	bool init();
 	void clear() const;
 	void update() const;
+	void setPosition(double x, double y) { glfwSetCursorPos(m_window, x, y); };
 
 	inline bool isRunning() { return !glfwWindowShouldClose(m_window); };
 	inline void getMousePos(double& x, double& y) { x = mx; y = my; };
@@ -34,7 +35,7 @@ private:
 	GLFWwindow* m_window;
 
 private:
-	friend static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
+	friend static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos); 
 	friend static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 	friend static void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods);
 

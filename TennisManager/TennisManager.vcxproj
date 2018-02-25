@@ -121,8 +121,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\Framework\Entities\Camera.h" />
     <ClInclude Include="engine\Framework\Entities\CubeEntity.h" />
+    <ClInclude Include="engine\Framework\Entities\Entity.h" />
     <ClInclude Include="engine\Framework\Entities\Model.h" />
+    <ClInclude Include="engine\Framework\Entities\Player\Player.h" />
     <ClInclude Include="engine\Framework\Framework.h" />
     <ClInclude Include="engine\Framework\Graphical.h" />
     <ClInclude Include="engine\Framework\Entities\GuiEntity.h" />
@@ -149,11 +152,13 @@
     <ClInclude Include="engine\GameSkeleton\GameState.h" />
     <ClInclude Include="game\GameStates\IntroState.h" />
     <ClInclude Include="engine\GameSkeleton\StateManager.h" />
-    <ClInclude Include="minecraftClone\GameStates\IntroState.h" />
+    <ClInclude Include="minecraftClone\GameStates\TestState.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\Framework\Entities\Camera.cpp" />
     <ClCompile Include="engine\Framework\Entities\CubeEntity.cpp" />
     <ClCompile Include="engine\Framework\Entities\Model.cpp" />
+    <ClCompile Include="engine\Framework\Entities\Player\Player.cpp" />
     <ClCompile Include="engine\Framework\Graphical.cpp" />
     <ClCompile Include="engine\Framework\Entities\GuiEntity.cpp" />
     <ClCompile Include="engine\Framework\Renderers\CubeRenderer.cpp" />
@@ -168,12 +173,12 @@
     <ClCompile Include="engine\Tools\Math\Matrix.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
     <ClCompile Include="engine\Tools\Texture\Texture.cpp" />
-    <ClCompile Include="game\game.cpp" />
+    <ClCompile Include="game\pong.cpp" />
     <ClCompile Include="game\GameComponents\Paddle.cpp" />
     <ClCompile Include="game\GameStates\IntroState.cpp" />
     <ClCompile Include="engine\GameSkeleton\StateManager.cpp" />
-    <ClCompile Include="minecraftClone\game.cpp" />
-    <ClCompile Include="minecraftClone\GameStates\IntroState.cpp" />
+    <ClCompile Include="minecraftClone\minecraft.cpp" />
+    <ClCompile Include="minecraftClone\GameStates\TestState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\fonts\roboto.fnt" />

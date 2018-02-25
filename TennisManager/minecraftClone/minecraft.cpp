@@ -1,9 +1,9 @@
 #include "../engine/GameSkeleton/StateManager.h"
-#include "GameStates/IntroState.h"
+#include "GameStates/TestState.h"
 
 int main() {
 	StateManager minecraft(1280, 720, "Minecraft");
-	IntroState* introState = new IntroState(&minecraft);
+	TestState* introState = new TestState(&minecraft);
 	minecraft.pushState(introState);
 
 	while (minecraft.isRunning()) {

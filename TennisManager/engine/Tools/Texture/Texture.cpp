@@ -10,7 +10,7 @@ Texture::Texture(const std::string& filePath)
 	std::string fullPath = "res/textures/" + filePath;
 	m_name = filePath;
 	unsigned char* imageData = stbi_load(fullPath.c_str(), &width, &height, &numComponents, 4);
-
+	
 	if (imageData == NULL)
 		std::cerr << "Texure Loading failed for texture " << filePath << std::endl;
 
@@ -26,7 +26,7 @@ Texture::Texture(const std::string& filePath)
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);
 
-	stbi_image_free(imageData);
+	//stbi_image_free(imageData);
 }
 
 Texture::~Texture()

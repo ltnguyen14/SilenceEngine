@@ -1,4 +1,5 @@
 #include "CubeRenderer.h"
+#include "../Entities/Camera.h"
 
 CubeRenderer::CubeRenderer()
 	:m_shader("res/shaders/basic.shader")
@@ -16,13 +17,13 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 	CubeEntity * cube = new CubeEntity(
 		{
 			-scale.x,  scale.y, scale.z,
-			scale.x,  scale.y, scale.z,
-			scale.x, -scale.y, scale.z,
+			scale.x,   scale.y, scale.z,
+			scale.x,  -scale.y, scale.z,
 			-scale.x, -scale.y, scale.z,
 
 			-scale.x,  scale.y, -scale.z,
-			scale.x,  scale.y, -scale.z,
-			scale.x, -scale.y, -scale.z,
+			scale.x,   scale.y, -scale.z,
+			scale.x,  -scale.y, -scale.z,
 			-scale.x, -scale.y, -scale.z,
 		},
 		{
@@ -67,17 +68,16 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 	m_cubes.push_back(cube);
 }
 
-void CubeRenderer::renderCubes(Window * window)
+void CubeRenderer::renderCubes(Window * window, Camera* camera)
 {
 	m_shader.Bind();
-	//m_shader.SetUniformMat4("projViewMatrix", camera.getProjectionViewMatrix());
-	m_shader.SetUniformMat4("projViewMatrix", makeProjectionMatrix(45));
+	m_shader.SetUniformMat4("projViewMatrix", camera->getProjectionViewMatrix());
 
 
 	for (auto& cube : m_cubes)
 	{
 		cube->bindVAO();
-		cube->getTexture().Bind(0);
+		cube->getTexture()->Bind(0);
 		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix(cube->getPosition(), { 0, 0, 0 }));
 		glDrawElements(GL_TRIANGLES, cube->getIndicesCount(), GL_UNSIGNED_INT, nullptr);
 	}

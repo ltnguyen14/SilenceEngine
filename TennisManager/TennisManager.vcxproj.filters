@@ -90,9 +90,6 @@
     <ClInclude Include="engine\GameSkeleton\StateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="minecraftClone\GameStates\IntroState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\Framework\Entities\Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -100,6 +97,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\Framework\Renderers\CubeRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="minecraftClone\GameStates\TestState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\Player\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -131,9 +140,6 @@
     <ClCompile Include="engine\System\InputSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game\game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game\GameStates\IntroState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -155,12 +161,6 @@
     <ClCompile Include="engine\GameSkeleton\StateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="minecraftClone\game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="minecraftClone\GameStates\IntroState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\Framework\Entities\Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -168,6 +168,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\Framework\Renderers\CubeRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\pong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minecraftClone\minecraft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minecraftClone\GameStates\TestState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\Player\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
