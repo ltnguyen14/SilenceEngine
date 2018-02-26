@@ -16,6 +16,9 @@ ResManager::ResManager()
 
 	Texture* texture5 = new Texture("Test.png");
 	m_textures.push_back(texture5);
+
+	TextureAtlas* atlas = new TextureAtlas("AtlasTest.png");
+	m_textureAtlas.push_back(atlas);
 }
 
 ResManager::~ResManager()
@@ -31,3 +34,13 @@ Texture* ResManager::getTexture(std::string textureName)
 	}
 	std::cout << "Cannot find texture " << textureName << std::endl;
 }
+
+TextureAtlas * ResManager::getAtlas(std::string atlasName)
+{
+	for (auto& atlas : m_textureAtlas) {
+		if (atlas->getName() == atlasName)
+			return atlas;
+	}
+	std::cout << "Cannot find atlas " << atlasName << std::endl;
+}
+

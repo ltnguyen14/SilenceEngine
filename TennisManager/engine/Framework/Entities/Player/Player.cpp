@@ -67,8 +67,6 @@ void Player::mouseInput()
 	change_x = new_x - old_x;
 	change_y = new_y - old_y;
 
-	std::cout << change_x << std::endl;
-
 	rotation.y += change_x * 0.001;
 	rotation.x += change_y * 0.001;
 

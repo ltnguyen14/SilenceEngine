@@ -28,7 +28,7 @@ void Graphics::drawText(glm::vec2 position, std::string content, float width, gl
 
 void Graphics::addCube(glm::vec3 position, glm::vec3 scale, const std::string & texture)
 {
-	m_cubeRenderer.addCube(position, scale, texture);
+	m_cubeRenderer.addCube(position, scale, texture, &m_resManager);
 }
 
 void Graphics::renderCubes(Camera* camera)

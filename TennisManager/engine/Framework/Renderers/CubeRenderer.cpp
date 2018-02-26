@@ -12,104 +12,88 @@ CubeRenderer::~CubeRenderer()
 		delete(&cube);
 }
 
-void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture)
+void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture, ResManager* resManager)
 {
-	CubeEntity * cube = new CubeEntity(
-		{
-			// Front
-			-scale.x, scale.y, scale.z,
-			-scale.x, -scale.y, scale.z,
-			scale.x, -scale.y, scale.z,
-			scale.x, scale.y, scale.z,
+	std::vector<float> vertexPositions =
+	{
+		// Front
+		-scale.x, -scale.y, scale.z,
+		scale.x, -scale.y, scale.z,
+		scale.x, scale.y, scale.z,
+		-scale.x, scale.y, scale.z,
 
-			// Right
-			scale.x, scale.y, scale.z,
-			scale.x, -scale.y, scale.z,
-			scale.x, -scale.y, -scale.z,
-			scale.x, scale.y, -scale.z,
+		// Right
+		scale.x, -scale.y, scale.z,
+		scale.x, -scale.y, -scale.z,
+		scale.x, scale.y, -scale.z,
+		scale.x, scale.y, scale.z,
 
-			// Back
-			scale.x, -scale.y, -scale.z,
-			scale.x, scale.y, -scale.z,
-			-scale.x, scale.y, -scale.z,
-			-scale.x, -scale.y, -scale.z,
+		// Back
+		-scale.x, -scale.y, -scale.z,
+		scale.x, -scale.y, -scale.z,
+		scale.x, scale.y, -scale.z,
+		-scale.x, scale.y, -scale.z,
 
-			// Left
-			-scale.x, -scale.y, -scale.z,
-			-scale.x, scale.y, -scale.z,
-			-scale.x, scale.y, scale.z,
-			-scale.x, -scale.y, scale.z,
+		// Left
+		-scale.x, -scale.y, scale.z,
+		-scale.x, -scale.y, -scale.z,
+		-scale.x, scale.y, -scale.z,
+		-scale.x, scale.y, scale.z,
 
-			// Up
-			-scale.x, scale.y, -scale.z,
-			-scale.x, scale.y, scale.z,
-			scale.x, scale.y, scale.z,
-			scale.x, scale.y, -scale.z,
+		// Up
+		-scale.x, scale.y, scale.z,
+		scale.x, scale.y, scale.z,
+		scale.x, scale.y, -scale.z,
+		-scale.x, scale.y, -scale.z,
 
-			// Down
-			-scale.x, -scale.y, -scale.z,
-			-scale.x, -scale.y, scale.z,
-			scale.x, -scale.y, scale.z,
-			scale.x, -scale.y, -scale.z,
-		},
-		{
-			// Front
-			0, 1, 2, 
-			2, 3, 0,
+		// Down
+		scale.x, -scale.y, -scale.z,
+		-scale.x, -scale.y, -scale.z,
+		-scale.x, -scale.y, scale.z,
+		scale.x, -scale.y, scale.z,
 
-			// Right
-			4, 5, 6,
-			6, 7, 4,
+	};
 
-			// Back
-			8, 9, 10,
-			10, 11, 8,
+	std::vector<unsigned int> indicies =
+	{
+		// Front
+		0, 1, 2,
+		2, 3, 0,
 
-			// Left
-			12, 13, 14,
-			14, 15, 12,
+		// Right
+		4, 5, 6,
+		6, 7, 4,
 
-			// Up
-			16, 17, 18,
-			18, 19, 16,
+		// Back
+		8, 9, 10,
+		10, 11, 8,
 
-			// Down
-			20, 21, 22,
-			22, 23, 20,
-		},
-		{
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
+		// Left
+		12, 13, 14,
+		14, 15, 12,
 
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
+		// Up
+		16, 17, 18,
+		18, 19, 16,
 
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
+		// Down
+		20, 21, 22,
+		22, 23, 20,
+	};
 
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
+	auto top = resManager->getAtlas(texture)->getTexture({ 0, 0 });
+	auto side = resManager->getAtlas(texture)->getTexture({ 1, 0 });
+	auto bottom = resManager->getAtlas(texture)->getTexture({ 2, 0 });
 
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
+	std::vector<GLfloat> texCoords;
+	texCoords.insert(texCoords.end(), side.begin(), side.end());
+	texCoords.insert(texCoords.end(), side.begin(), side.end());
+	texCoords.insert(texCoords.end(), side.begin(), side.end());
+	texCoords.insert(texCoords.end(), side.begin(), side.end());
+	texCoords.insert(texCoords.end(), top.begin(), top.end());
+	texCoords.insert(texCoords.end(), bottom.begin(), bottom.end());
 
-			0, 1,
-			1, 1,
-			1, 0,
-			0, 0,
-		},
-		texture
-	);
+	CubeEntity * cube = new CubeEntity(vertexPositions, indicies, texCoords, texture);
 	cube->setPosition(position);
 	m_cubes.push_back(cube);
 }

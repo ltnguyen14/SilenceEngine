@@ -4,7 +4,7 @@
 
 TestState::TestState(StateManager* game)
 {
-	game->m_engine.m_renderSystem->addCube({ 0, 0, -5 }, { 1, 1, 1 }, "Test.png");
+	game->m_engine.m_renderSystem->addCube({ 0, 0, -5 }, { 1, 1, 1 }, "AtlasTest.png");
 	m_player = game->m_engine.m_renderSystem->createPlayer();
 	m_camera = game->m_engine.m_renderSystem->getCamera();
 }

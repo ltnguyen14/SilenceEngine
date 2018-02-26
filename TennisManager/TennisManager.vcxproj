@@ -148,6 +148,7 @@
     <ClInclude Include="engine\Tools\Math\glm.h" />
     <ClInclude Include="engine\Tools\Shader\Shader.h" />
     <ClInclude Include="engine\Tools\Texture\Texture.h" />
+    <ClInclude Include="engine\Tools\Texture\TextureAtlas.h" />
     <ClInclude Include="game\GameComponents\Paddle.h" />
     <ClInclude Include="engine\GameSkeleton\GameState.h" />
     <ClInclude Include="game\GameStates\IntroState.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="engine\Tools\Math\Matrix.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
     <ClCompile Include="engine\Tools\Texture\Texture.cpp" />
+    <ClCompile Include="engine\Tools\Texture\TextureAtlas.cpp" />
     <ClCompile Include="game\pong.cpp" />
     <ClCompile Include="game\GameComponents\Paddle.cpp" />
     <ClCompile Include="game\GameStates\IntroState.cpp" />
@@ -192,6 +194,7 @@
     <Image Include="res\textures\arrow_box.png" />
     <Image Include="res\textures\gray_bg.png" />
     <Image Include="res\textures\Test.png" />
+    <Image Include="res\textures\AtlasTest.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
