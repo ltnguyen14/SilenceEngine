@@ -17,6 +17,7 @@ void Model::addData(const std::vector<float>& vertexPositions,
 	if (m_vao != 0)
 		deleteData();
 	m_indicesCount = indices.size();
+	m_vertCount = vertexPositions.size() / 3;
 
 	glGenVertexArrays(1, &m_vao);
 	glBindVertexArray(m_vao);

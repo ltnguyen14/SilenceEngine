@@ -24,9 +24,9 @@ void TestState::handleEvents(StateManager * game)
 
 void TestState::update(StateManager * game)
 {
+	game->m_engine.update();
 	m_player->update(1);
 	m_camera->update();
-	game->m_engine.update();
 }
 
 void TestState::draw(StateManager * game)

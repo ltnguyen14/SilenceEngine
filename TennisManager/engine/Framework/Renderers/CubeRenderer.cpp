@@ -16,42 +16,88 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 {
 	CubeEntity * cube = new CubeEntity(
 		{
-			-scale.x,  scale.y, scale.z,
-			scale.x,   scale.y, scale.z,
-			scale.x,  -scale.y, scale.z,
+			// Front
+			-scale.x, scale.y, scale.z,
+			-scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, scale.z,
+			scale.x, scale.y, scale.z,
+
+			// Right
+			scale.x, scale.y, scale.z,
+			scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, -scale.z,
+			scale.x, scale.y, -scale.z,
+
+			// Back
+			scale.x, -scale.y, -scale.z,
+			scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, -scale.z,
+			-scale.x, -scale.y, -scale.z,
+
+			// Left
+			-scale.x, -scale.y, -scale.z,
+			-scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, scale.z,
 			-scale.x, -scale.y, scale.z,
 
-			-scale.x,  scale.y, -scale.z,
-			scale.x,   scale.y, -scale.z,
-			scale.x,  -scale.y, -scale.z,
+			// Up
+			-scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, scale.z,
+			scale.x, scale.y, scale.z,
+			scale.x, scale.y, -scale.z,
+
+			// Down
 			-scale.x, -scale.y, -scale.z,
+			-scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, -scale.z,
 		},
 		{
 			// Front
-			0, 1, 2,
+			0, 1, 2, 
 			2, 3, 0,
 
-			// Back
+			// Right
 			4, 5, 6,
 			6, 7, 4,
 
+			// Back
+			8, 9, 10,
+			10, 11, 8,
+
 			// Left
-			0, 1, 5,
-			5, 4, 0,
+			12, 13, 14,
+			14, 15, 12,
 
-			// Right
-			3, 2, 6,
-			6, 7, 3,
+			// Up
+			16, 17, 18,
+			18, 19, 16,
 
-			// Top
-			0, 4, 7,
-			7, 3, 0,
-
-			// Bottom
-			1, 2, 6,
-			6, 5, 1
+			// Down
+			20, 21, 22,
+			22, 23, 20,
 		},
 		{
+			0, 1,
+			1, 1,
+			1, 0,
+			0, 0,
+
+			0, 1,
+			1, 1,
+			1, 0,
+			0, 0,
+
+			0, 1,
+			1, 1,
+			1, 0,
+			0, 0,
+
+			0, 1,
+			1, 1,
+			1, 0,
+			0, 0,
+
 			0, 1,
 			1, 1,
 			1, 0,

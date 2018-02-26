@@ -47,7 +47,14 @@ void Player::keyboardInput()
 		change.x = -glm::cos(glm::radians(rotation.y)) * speed;
 		change.z = -glm::sin(glm::radians(rotation.y)) * speed;
 	}
-
+	if (m_window->keyPressed(GLFW_KEY_Q))
+	{
+		change.y = -0.05f;
+	}	
+	if (m_window->keyPressed(GLFW_KEY_E))
+	{
+		change.y = 0.05f;
+	}
 	m_velocity += change;
 }
 
@@ -60,8 +67,10 @@ void Player::mouseInput()
 	change_x = new_x - old_x;
 	change_y = new_y - old_y;
 
-	rotation.y += change_x * 0.05;
-	rotation.x += change_y * 0.05;
+	std::cout << change_x << std::endl;
+
+	rotation.y += change_x * 0.001;
+	rotation.x += change_y * 0.001;
 
 	if (rotation.x >  BOUND) rotation.x = BOUND;
 	else if (rotation.x < -BOUND) rotation.x = -BOUND;
@@ -69,6 +78,6 @@ void Player::mouseInput()
 	if (rotation.y >  360) rotation.y = 0;
 	else if (rotation.y < 0)    rotation.y = 360;
 
-	m_window->setPosition(m_window->getWidth() / 2, m_window->getHeight() / 2);
+	//m_window->setPosition(m_window->getWidth() / 2, m_window->getHeight() / 2);
 }
 
