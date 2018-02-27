@@ -114,6 +114,9 @@
     <ClInclude Include="engine\Tools\Texture\TextureAtlas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Framework\Entities\Block\BlockData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -191,12 +194,18 @@
     <ClCompile Include="engine\Tools\Texture\TextureAtlas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\Block\BlockData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\gui.shader" />
     <None Include="res\shaders\text.shader" />
     <None Include="res\fonts\roboto.fnt" />
     <None Include="res\shaders\basic.shader" />
+    <None Include="res\Blocks\Dirt.block" />
+    <None Include="res\Blocks\Grass.block" />
+    <None Include="res\Blocks\Stone.block" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\arrow_box.png">

@@ -23,8 +23,8 @@ public:
 		m_graphics.drawText(position, content, width, color);
 	}
 
-	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture) {
-		m_graphics.addCube(position, scale, texture);
+	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& material) {
+		m_graphics.addCube(position, scale, material);
 	}
 
 	void renderCubes(Camera* camera) {

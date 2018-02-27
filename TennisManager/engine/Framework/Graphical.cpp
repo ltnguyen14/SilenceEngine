@@ -26,9 +26,9 @@ void Graphics::drawText(glm::vec2 position, std::string content, float width, gl
 	m_textRenderer.RenderText(m_window);
 }
 
-void Graphics::addCube(glm::vec3 position, glm::vec3 scale, const std::string & texture)
+void Graphics::addCube(glm::vec3 position, glm::vec3 scale, const std::string& material)
 {
-	m_cubeRenderer.addCube(position, scale, texture, &m_resManager);
+	m_cubeRenderer.addCube(position, scale, material, &m_resManager);
 }
 
 void Graphics::renderCubes(Camera* camera)

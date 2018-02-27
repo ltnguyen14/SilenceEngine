@@ -121,6 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="engine\Framework\Entities\Block\BlockData.h" />
     <ClInclude Include="engine\Framework\Entities\Camera.h" />
     <ClInclude Include="engine\Framework\Entities\CubeEntity.h" />
     <ClInclude Include="engine\Framework\Entities\Entity.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="minecraftClone\GameStates\TestState.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="engine\Framework\Entities\Block\BlockData.cpp" />
     <ClCompile Include="engine\Framework\Entities\Camera.cpp" />
     <ClCompile Include="engine\Framework\Entities\CubeEntity.cpp" />
     <ClCompile Include="engine\Framework\Entities\Model.cpp" />
@@ -183,6 +185,9 @@
     <ClCompile Include="minecraftClone\GameStates\TestState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\Blocks\Dirt.block" />
+    <None Include="res\Blocks\Grass.block" />
+    <None Include="res\Blocks\Stone.block" />
     <None Include="res\fonts\roboto.fnt" />
     <None Include="res\shaders\basic.shader" />
     <None Include="res\shaders\gui.shader" />

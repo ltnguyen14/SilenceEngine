@@ -12,7 +12,7 @@ CubeRenderer::~CubeRenderer()
 		delete(&cube);
 }
 
-void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture, ResManager* resManager)
+void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager)
 {
 	std::vector<float> vertexPositions =
 	{
@@ -81,19 +81,10 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 		22, 23, 20,
 	};
 
-	auto top = resManager->getAtlas(texture)->getTexture({ 0, 0 });
-	auto side = resManager->getAtlas(texture)->getTexture({ 1, 0 });
-	auto bottom = resManager->getAtlas(texture)->getTexture({ 2, 0 });
-
-	std::vector<GLfloat> texCoords;
-	texCoords.insert(texCoords.end(), side.begin(), side.end());
-	texCoords.insert(texCoords.end(), side.begin(), side.end());
-	texCoords.insert(texCoords.end(), side.begin(), side.end());
-	texCoords.insert(texCoords.end(), side.begin(), side.end());
-	texCoords.insert(texCoords.end(), top.begin(), top.end());
-	texCoords.insert(texCoords.end(), bottom.begin(), bottom.end());
-
-	CubeEntity * cube = new CubeEntity(vertexPositions, indicies, texCoords, texture);
+	std::vector<float> texCoords = resManager->getBlockData(material)->getTexCoords();
+	std::string texPath = resManager->getBlockData(material)->getTexPath();
+	
+	CubeEntity * cube = new CubeEntity(vertexPositions, indicies, texCoords, texPath);
 	cube->setPosition(position);
 	m_cubes.push_back(cube);
 }

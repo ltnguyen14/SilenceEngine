@@ -9,7 +9,7 @@ public:
 	CubeRenderer();
 	~CubeRenderer();
 
-	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& texture, ResManager* resManager);
+	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager);
 	void renderCubes(Window* window, Camera* camera);
 
 private:

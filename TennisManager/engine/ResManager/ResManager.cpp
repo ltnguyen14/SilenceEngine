@@ -19,6 +19,15 @@ ResManager::ResManager()
 
 	TextureAtlas* atlas = new TextureAtlas("AtlasTest.png");
 	m_textureAtlas.push_back(atlas);
+
+	BlockData* dirt = new BlockData("Dirt", m_textureAtlas);
+	m_blockData.push_back(dirt);
+
+	BlockData* grass = new BlockData("Grass", m_textureAtlas);
+	m_blockData.push_back(grass);
+
+	BlockData* stone = new BlockData("Stone", m_textureAtlas);
+	m_blockData.push_back(stone);
 }
 
 ResManager::~ResManager()
@@ -42,5 +51,14 @@ TextureAtlas * ResManager::getAtlas(std::string atlasName)
 			return atlas;
 	}
 	std::cout << "Cannot find atlas " << atlasName << std::endl;
+}
+
+BlockData * ResManager::getBlockData(std::string blockName)
+{
+	for (auto& block : m_blockData) {
+		if (block->getName() == blockName)
+			return block;
+	}
+	std::cout << "Cannot find atlas " << blockName << std::endl;
 }
 
