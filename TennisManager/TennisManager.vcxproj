@@ -198,6 +198,7 @@
     <Image Include="res\textures\arrow-right.png" />
     <Image Include="res\textures\arrow_box.png" />
     <Image Include="res\textures\gray_bg.png" />
+    <Image Include="res\textures\terrainAtlas.png" />
     <Image Include="res\textures\Test.png" />
     <Image Include="res\textures\AtlasTest.png" />
   </ItemGroup>

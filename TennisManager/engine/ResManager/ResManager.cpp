@@ -20,6 +20,9 @@ ResManager::ResManager()
 	TextureAtlas* atlas = new TextureAtlas("AtlasTest.png");
 	m_textureAtlas.push_back(atlas);
 
+	TextureAtlas* terrain = new TextureAtlas("terrainAtlas.png");
+	m_textureAtlas.push_back(terrain);
+
 	BlockData* dirt = new BlockData("Dirt", m_textureAtlas);
 	m_blockData.push_back(dirt);
 
