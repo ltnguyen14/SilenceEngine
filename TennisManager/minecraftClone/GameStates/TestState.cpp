@@ -8,9 +8,9 @@ TestState::TestState(StateManager* game)
 	game->m_engine.m_renderSystem->addCube({ -5, 0, -5 }, { 1, 1, 1 }, "Dirt");
 	game->m_engine.m_renderSystem->addCube({ 5, 0, -5 }, { 1, 1, 1 }, "Stone");*/
 	
-	game->m_engine.m_renderSystem->addChunk({ 0, 0, -10 }, { 20, 1, 20 }, "Grass");
-	game->m_engine.m_renderSystem->addChunk({ 0, -2, -10 }, { 20, 3, 20 }, "Dirt");
-	game->m_engine.m_renderSystem->addChunk({ 0, -4, -10 }, { 20, 5, 20 }, "Stone");
+	game->m_engine.m_renderSystem->addChunk({ 0, 0, -10 }, { 10, 1, 10 }, "Grass");
+	game->m_engine.m_renderSystem->addChunk({ 0, -1, -10 }, { 10, 3, 10 }, "Dirt");
+	game->m_engine.m_renderSystem->addChunk({ 0, -4, -10 }, { 10, 5, 10 }, "Stone");
 
 
 	m_player = game->m_engine.m_renderSystem->createPlayer();
@@ -39,7 +39,7 @@ void TestState::update(StateManager * game)
 
 void TestState::draw(StateManager * game)
 {
-	game->m_engine.m_renderSystem->renderText({ 0, 0 }, "Test string", 300, {0.2f, 0.4f, 0.8f, 1.0f});
+	game->m_engine.m_renderSystem->renderText({ 0, 0 }, "Minecraft Clone", 100, {0.2f, 0.4f, 0.8f, 1.0f});
 	game->m_engine.m_renderSystem->renderChunks(m_camera);
 }
 
