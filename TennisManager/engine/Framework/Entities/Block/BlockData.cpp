@@ -65,6 +65,10 @@ BlockData::BlockData(const std::string& filePath, std::vector<TextureAtlas*> atl
 	auto texSide = textAtlas->getTexture(side);
 	auto texBottom = textAtlas->getTexture(bottom);
 
+	m_texTop = texTop;
+	m_texSide = texSide;
+	m_texBottom = texBottom;
+
 	m_texCoords.insert(m_texCoords.end(), texSide.begin(), texSide.end());
 	m_texCoords.insert(m_texCoords.end(), texSide.begin(), texSide.end());
 	m_texCoords.insert(m_texCoords.end(), texSide.begin(), texSide.end());

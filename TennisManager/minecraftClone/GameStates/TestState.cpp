@@ -7,7 +7,11 @@ TestState::TestState(StateManager* game)
 	/*game->m_engine.m_renderSystem->addCube({ 0, 0, -5 }, { 1, 1, 1 }, "Grass");
 	game->m_engine.m_renderSystem->addCube({ -5, 0, -5 }, { 1, 1, 1 }, "Dirt");
 	game->m_engine.m_renderSystem->addCube({ 5, 0, -5 }, { 1, 1, 1 }, "Stone");*/
-	game->m_engine.m_renderSystem->addChunk({ 0, 0, -10 }, { 10, 10, 10 }, "Dirt");
+	
+	game->m_engine.m_renderSystem->addChunk({ 0, 0, -10 }, { 20, 1, 20 }, "Grass");
+	game->m_engine.m_renderSystem->addChunk({ 0, -2, -10 }, { 20, 3, 20 }, "Dirt");
+	game->m_engine.m_renderSystem->addChunk({ 0, -4, -10 }, { 20, 5, 20 }, "Stone");
+
 
 	m_player = game->m_engine.m_renderSystem->createPlayer();
 	m_camera = game->m_engine.m_renderSystem->getCamera();

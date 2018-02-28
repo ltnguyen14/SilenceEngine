@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Tools/Shader/Shader.h"
+#include "../Entities/Camera.h"
 #include "../Entities/CubeEntity.h"
 #include "../../ResManager/ResManager.h"
 #include "CubeRenderer.h"
@@ -13,5 +14,6 @@ public:
 	void renderChunks(Window* window, Camera* camera);
 
 private:
+	std::vector<Chunk*> m_chunks;
 
 };

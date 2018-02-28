@@ -40,13 +40,13 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 		-scale.x, scale.y, -scale.z,
 		-scale.x, scale.y, scale.z,
 
-		// Up
+		// Top
 		-scale.x, scale.y, scale.z,
 		scale.x, scale.y, scale.z,
 		scale.x, scale.y, -scale.z,
 		-scale.x, scale.y, -scale.z,
 
-		// Down
+		// Bottom
 		scale.x, -scale.y, -scale.z,
 		-scale.x, -scale.y, -scale.z,
 		-scale.x, -scale.y, scale.z,
@@ -102,4 +102,86 @@ void CubeRenderer::renderCubes(Window * window, Camera* camera)
 		m_shader.SetUniformMat4("modelMatrix", makeModelMatrix(cube->getPosition(), { 0, 0, 0 }));
 		glDrawElements(GL_TRIANGLES, cube->getIndicesCount(), GL_UNSIGNED_INT, nullptr);
 	}
+}
+
+void CubeRenderer::addFace(std::vector<float>& verts, std::vector<float>& textureCoords, glm::vec3 position, glm::vec3 scale, const std::string & material, ResManager * resManager, Side side)
+{
+	std::vector<float> vertexPositions;
+	std::vector<float> texCoords;
+
+	if (side == FRONT) {
+		vertexPositions = {
+			// Front
+			-scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, scale.z,
+			scale.x, scale.y, scale.z,
+			-scale.x, scale.y, scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexSide();
+	}
+	else if (side == RIGHT) {
+		vertexPositions = {
+			// Right
+			scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, -scale.z,
+			scale.x, scale.y, -scale.z,
+			scale.x, scale.y, scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexSide();
+	}
+	else if (side == BACK) {
+		vertexPositions = {
+			// Back
+			-scale.x, -scale.y, -scale.z,
+			scale.x, -scale.y, -scale.z,
+			scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, -scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexSide();
+	}
+	else if (side == LEFT) {
+		vertexPositions = {
+			// Left
+			-scale.x, -scale.y, scale.z,
+			-scale.x, -scale.y, -scale.z,
+			-scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexSide();
+	}
+	else if (side == TOP) {
+		vertexPositions = {
+			// Top
+			-scale.x, scale.y, scale.z,
+			scale.x, scale.y, scale.z,
+			scale.x, scale.y, -scale.z,
+			-scale.x, scale.y, -scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexTop();
+	}
+	else if (side == BOTTOM) {
+		vertexPositions = {
+			// Bottom
+			scale.x, -scale.y, -scale.z,
+			-scale.x, -scale.y, -scale.z,
+			-scale.x, -scale.y, scale.z,
+			scale.x, -scale.y, scale.z,
+		};
+		texCoords = resManager->getBlockData(material)->getTexBottom();
+	}
+
+	std::vector<float> positionOffset;
+	for (size_t i = 0; i < 4; i++)
+	{
+		positionOffset.insert(positionOffset.end(), { position.x, position.y, position.z });
+	};
+	
+	for (size_t i = 0; i < vertexPositions.size(); i++)
+	{
+		vertexPositions[i] += positionOffset[i];
+	}
+
+	verts.insert(verts.end(), vertexPositions.begin(), vertexPositions.end());
+	textureCoords.insert(textureCoords.end(), texCoords.begin(), texCoords.end());
+
 }

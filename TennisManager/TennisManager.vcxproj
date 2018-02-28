@@ -137,6 +137,7 @@
     <ClInclude Include="engine\Framework\Text\MetaFile.h" />
     <ClInclude Include="engine\Framework\Text\TextObj.h" />
     <ClInclude Include="engine\Framework\Window\Window.h" />
+    <ClInclude Include="engine\Framework\World\Chunk.h" />
     <ClInclude Include="engine\MessageBus\Message.h" />
     <ClInclude Include="engine\MessageBus\MessageBus.h" />
     <ClInclude Include="engine\ResManager\ResManager.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="engine\Framework\Text\MetaFile.cpp" />
     <ClCompile Include="engine\Framework\Text\TextObj.cpp" />
     <ClCompile Include="engine\Framework\Window\Window.cpp" />
+    <ClCompile Include="engine\Framework\World\Chunk.cpp" />
     <ClCompile Include="engine\ResManager\ResManager.cpp" />
     <ClCompile Include="engine\SilenceEngine.cpp" />
     <ClCompile Include="engine\System\InputSystem.cpp" />
