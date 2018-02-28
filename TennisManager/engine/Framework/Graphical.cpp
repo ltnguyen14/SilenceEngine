@@ -26,14 +26,14 @@ void Graphics::drawText(glm::vec2 position, std::string content, float width, gl
 	m_textRenderer.RenderText(m_window);
 }
 
-void Graphics::addCube(glm::vec3 position, glm::vec3 scale, const std::string& material)
+void Graphics::addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material)
 {
-	m_chunkRenderer.addCube(position, scale, material, &m_resManager);
+	m_chunkRenderer.addChunk(position, scale, material, &m_resManager);
 }
 
-void Graphics::renderCubes(Camera* camera)
+void Graphics::renderChunks(Camera* camera)
 {
-	m_chunkRenderer.renderCubes(m_window, camera);
+	m_chunkRenderer.renderChunks(m_window, camera);
 }
 
 Player * Graphics::createPlayer()

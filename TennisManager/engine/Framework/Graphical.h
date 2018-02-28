@@ -19,8 +19,8 @@ public:
 	void drawquad(glm::vec2 position, float width, float height, glm::vec4 color, std::string textureName);
 	void drawText(glm::vec2 position, std::string content, float width, glm::vec4 color);
 
-	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& material);
-	void renderCubes(Camera* camera);
+	void addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material);
+	void renderChunks(Camera* camera);
 
 	Player* createPlayer();
 	Camera* getCamera() { return m_camera; };

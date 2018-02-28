@@ -7,11 +7,7 @@ TestState::TestState(StateManager* game)
 	/*game->m_engine.m_renderSystem->addCube({ 0, 0, -5 }, { 1, 1, 1 }, "Grass");
 	game->m_engine.m_renderSystem->addCube({ -5, 0, -5 }, { 1, 1, 1 }, "Dirt");
 	game->m_engine.m_renderSystem->addCube({ 5, 0, -5 }, { 1, 1, 1 }, "Stone");*/
-
-	for (int x = 0; x < 10; x += 2)
-		for (int y = 0; y < 10; y += 2)
-			for (int z = -4; z > -12; z -= 2)
-				game->m_engine.m_renderSystem->addCube({ x, y, z }, { 1, 1, 1 }, "Dirt");
+	game->m_engine.m_renderSystem->addChunk({ 0, 0, -10 }, { 10, 10, 10 }, "Dirt");
 
 	m_player = game->m_engine.m_renderSystem->createPlayer();
 	m_camera = game->m_engine.m_renderSystem->getCamera();
@@ -40,6 +36,6 @@ void TestState::update(StateManager * game)
 void TestState::draw(StateManager * game)
 {
 	game->m_engine.m_renderSystem->renderText({ 0, 0 }, "Test string", 300, {0.2f, 0.4f, 0.8f, 1.0f});
-	game->m_engine.m_renderSystem->renderCubes(m_camera);
+	game->m_engine.m_renderSystem->renderChunks(m_camera);
 }
 

@@ -9,7 +9,7 @@ public:
 	ChunkRenderer();
 	~ChunkRenderer();
 
-	void addChunk(glm::vec3 positon, glm::vec2 scale, const std::string& material, ResManager* resManager);
+	void addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager);
 	void renderChunks(Window* window, Camera* camera);
 
 private:
