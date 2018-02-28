@@ -12,7 +12,7 @@ public:
 	void addCube(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager);
 	void renderCubes(Window* window, Camera* camera);
 
-private:
+protected:
 	Shader m_shader;
 	std::vector<CubeEntity*> m_cubes;
 };

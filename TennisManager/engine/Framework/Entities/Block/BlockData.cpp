@@ -23,7 +23,7 @@ BlockData::BlockData(const std::string& filePath, std::vector<TextureAtlas*> atl
 		{
 			std::string path;
 			inFile >> path;
-			m_texturePath = path;
+			m_texPath = path;
 		}
 		if (line == "TexTop")
 		{
@@ -55,8 +55,10 @@ BlockData::BlockData(const std::string& filePath, std::vector<TextureAtlas*> atl
 
 	TextureAtlas* textAtlas = nullptr;
 	for (auto& atlas : atlases) {
-		if (atlas->getName() == m_texturePath)
+		if (atlas->getName() == m_texPath) {
+			m_texture = atlas;
 			textAtlas = atlas;
+		}
 	}
 
 	auto texTop = textAtlas->getTexture(top);

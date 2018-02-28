@@ -82,9 +82,9 @@ void CubeRenderer::addCube(glm::vec3 position, glm::vec3 scale, const std::strin
 	};
 
 	std::vector<float> texCoords = resManager->getBlockData(material)->getTexCoords();
-	std::string texPath = resManager->getBlockData(material)->getTexPath();
+	Texture* texture = resManager->getBlockData(material)->getTexture();
 	
-	CubeEntity * cube = new CubeEntity(vertexPositions, indicies, texCoords, texPath);
+	CubeEntity * cube = new CubeEntity(vertexPositions, indicies, texCoords, *texture);
 	cube->setPosition(position);
 	m_cubes.push_back(cube);
 }

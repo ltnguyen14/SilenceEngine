@@ -117,6 +117,9 @@
     <ClInclude Include="engine\Framework\Entities\Block\BlockData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Framework\Renderers\ChunkRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -185,9 +188,6 @@
     <ClCompile Include="minecraftClone\GameStates\TestState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\Framework\Entities\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\Framework\Entities\Player\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -195,6 +195,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\Framework\Entities\Block\BlockData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Renderers\ChunkRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Framework\Entities\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

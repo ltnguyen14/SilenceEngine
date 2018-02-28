@@ -4,7 +4,7 @@
 #include "Window/Window.h"
 #include "Renderers/GUIRenderer.h"
 #include "Renderers/TextRenderer.h"
-#include "Renderers/CubeRenderer.h"
+#include "Renderers/ChunkRenderer.h"
 #include "../ResManager/ResManager.h"
 #include "Entities/Player/Player.h"
 #include "Entities/Camera.h"
@@ -30,7 +30,7 @@ private:
 	GUIRenderer m_guiRenderer;
 	TextRenderer m_textRenderer;
 	ResManager m_resManager;
-	CubeRenderer m_cubeRenderer;
+	ChunkRenderer m_chunkRenderer;
 	Player * m_player = new Player(m_window);
 	Camera * m_camera = new Camera(m_window);
 };

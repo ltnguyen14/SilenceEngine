@@ -8,7 +8,7 @@ public:
 	CubeEntity(const std::vector<float>& vertexPositions,
 		const std::vector<unsigned int>&  indices,
 		const std::vector<float>&  textureCoords,
-		const std::string& texture);
+		Texture& texture);
 	~CubeEntity();
 
 	void setPosition(glm::vec3 position) { m_position = position; };

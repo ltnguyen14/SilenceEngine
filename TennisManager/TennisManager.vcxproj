@@ -130,6 +130,7 @@
     <ClInclude Include="engine\Framework\Framework.h" />
     <ClInclude Include="engine\Framework\Graphical.h" />
     <ClInclude Include="engine\Framework\Entities\GuiEntity.h" />
+    <ClInclude Include="engine\Framework\Renderers\ChunkRenderer.h" />
     <ClInclude Include="engine\Framework\Renderers\CubeRenderer.h" />
     <ClInclude Include="engine\Framework\Renderers\GUIRenderer.h" />
     <ClInclude Include="engine\Framework\Renderers\TextRenderer.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="engine\Framework\Entities\Player\Player.cpp" />
     <ClCompile Include="engine\Framework\Graphical.cpp" />
     <ClCompile Include="engine\Framework\Entities\GuiEntity.cpp" />
+    <ClCompile Include="engine\Framework\Renderers\ChunkRenderer.cpp" />
     <ClCompile Include="engine\Framework\Renderers\CubeRenderer.cpp" />
     <ClCompile Include="engine\Framework\Renderers\GUIRenderer.cpp" />
     <ClCompile Include="engine\Framework\Renderers\TextRenderer.cpp" />

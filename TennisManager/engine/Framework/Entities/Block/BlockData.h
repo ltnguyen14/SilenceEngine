@@ -12,10 +12,11 @@ public:
 
 	inline std::vector<float> getTexCoords() { return m_texCoords; };
 	inline std::string getName() { return m_name; };
-	inline std::string getTexPath() { return m_texturePath; };
+	inline Texture* getTexture() { return m_texture; };
 
 private:
 	std::string m_name;
-	std::string m_texturePath;
+	std::string m_texPath;
+	Texture* m_texture;
 	std::vector<float> m_texCoords;
 };
