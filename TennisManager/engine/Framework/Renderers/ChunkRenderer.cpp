@@ -32,7 +32,6 @@ void ChunkRenderer::addChunk(glm::vec3 position, glm::vec3 scale, const std::str
 			}
 	Texture* texture = resManager->getBlockData(material)->getTexture();
 	Chunk * chunk = new Chunk(verts, texCoords, *texture);
-	chunk->setPosition(position);
 	m_chunks.push_back(chunk);
 }
 
