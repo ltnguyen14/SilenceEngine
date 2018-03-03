@@ -10,9 +10,7 @@ TestState::TestState(StateManager* game)
 	
 	for (size_t i = 0; i < 17; i+= 17)
 	{
-		game->m_engine.m_renderSystem->addChunk({ 0+i, 0, -10 }, { 16, 1, 16 }, "Grass");
-		game->m_engine.m_renderSystem->addChunk({ 0+i, -5, -10 }, { 16, 5, 16 }, "Dirt");
-		game->m_engine.m_renderSystem->addChunk({ 0+i, -15, -10 }, { 16, 10, 16 }, "Stone");
+		game->m_engine.m_renderSystem->createTerrain(8, { 0, 0, 0 });
 
 	}
 

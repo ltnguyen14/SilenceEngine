@@ -3,9 +3,11 @@
 
 class TerrainGenerator {
 public:
-	TerrainGenerator();
+	TerrainGenerator(ChunkRenderer* chunkRenderer);
 	~TerrainGenerator();
 
-private:
+	void createTerrain(unsigned int height, glm::vec3 position, ResManager* resManager);
 
+private:
+	ChunkRenderer * m_chunkRenderer;
 };

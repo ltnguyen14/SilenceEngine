@@ -13,10 +13,14 @@ void ChunkRenderer::addChunk(glm::vec3 position, glm::vec3 scale, const std::str
 {
 	std::vector<float> verts;
 	std::vector<float> texCoords;
+	std::vector<glm::vec3> m_positions;
+
+	std::cout << scale.y << std::endl;
+	std::unordered_map<std::string, std::vector<glm::vec3>> m_blocks;
 
 	for (int x = 0; x < scale.x; x++)
-		for (int z = 0; z < scale.z; z++) 
-			for (int y = 0; y < scale.y + rand() % 5; y++)
+		for (int y = 0; y < scale.y; y++)
+			for (int z = 0; z < scale.z; z++) 
 			{
 				if (m_blocks.find(material) != m_blocks.end()) {
 					m_blocks[material].push_back(glm::vec3(x, y, z));
@@ -73,6 +77,8 @@ void ChunkRenderer::addChunk(glm::vec3 position, glm::vec3 scale, const std::str
 
 	Texture* texture = resManager->getBlockData(material)->getTexture();
 	Chunk * chunk = new Chunk(verts, texCoords, *texture);
+	chunk->setBlockPositions(m_positions);
+	chunk->setBlockInfo(m_blocks);
 	m_chunks.push_back(chunk);
 }
 

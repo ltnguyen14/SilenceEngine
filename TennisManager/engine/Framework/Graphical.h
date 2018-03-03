@@ -5,6 +5,7 @@
 #include "Renderers/GUIRenderer.h"
 #include "Renderers/TextRenderer.h"
 #include "Renderers/ChunkRenderer.h"
+#include "World/TerrainGenerator.h"
 #include "../ResManager/ResManager.h"
 #include "Entities/Player/Player.h"
 #include "Entities/Camera.h"
@@ -22,6 +23,8 @@ public:
 	void addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material);
 	void renderChunks(Camera* camera);
 
+	void createTerrain(unsigned int height, glm::vec3 position);
+
 	Player* createPlayer();
 	Camera* getCamera() { return m_camera; };
 
@@ -31,6 +34,7 @@ private:
 	TextRenderer m_textRenderer;
 	ResManager m_resManager;
 	ChunkRenderer m_chunkRenderer;
+	TerrainGenerator m_terrainGenerator;
 	Player * m_player = new Player(m_window);
 	Camera * m_camera = new Camera(m_window);
 };

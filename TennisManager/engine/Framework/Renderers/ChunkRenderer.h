@@ -16,6 +16,4 @@ public:
 
 private:
 	std::vector<Chunk*> m_chunks;
-	std::unordered_map<std::string, std::vector<glm::vec3>> m_blocks;
-	std::vector<glm::vec3> m_positions;
 };

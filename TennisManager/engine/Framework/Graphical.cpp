@@ -2,7 +2,7 @@
 #include <iostream>
 
 Graphics::Graphics(Window* window, ResManager& resManager)
-	:m_window(window), m_resManager(resManager)
+	:m_window(window), m_resManager(resManager), m_terrainGenerator(&m_chunkRenderer)
 {
 }
 
@@ -34,6 +34,11 @@ void Graphics::addChunk(glm::vec3 position, glm::vec3 scale, const std::string& 
 void Graphics::renderChunks(Camera* camera)
 {
 	m_chunkRenderer.renderChunks(m_window, camera);
+}
+
+void Graphics::createTerrain(unsigned int height, glm::vec3 position)
+{
+	m_terrainGenerator.createTerrain(height, position, &m_resManager);
 }
 
 Player * Graphics::createPlayer()

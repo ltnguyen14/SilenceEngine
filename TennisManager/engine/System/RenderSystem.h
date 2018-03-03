@@ -27,6 +27,10 @@ public:
 		m_graphics.addChunk(position, scale, material);
 	}
 
+	void createTerrain(unsigned int height, glm::vec3 position) {
+		m_graphics.createTerrain(height, position);
+	}
+
 	void renderChunks(Camera* camera) {
 		m_graphics.renderChunks(camera);
 	}
