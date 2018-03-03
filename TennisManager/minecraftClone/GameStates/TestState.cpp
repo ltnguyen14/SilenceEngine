@@ -8,7 +8,7 @@ TestState::TestState(StateManager* game)
 	game->m_engine.m_renderSystem->addCube({ -5, 0, -5 }, { 1, 1, 1 }, "Dirt");
 	game->m_engine.m_renderSystem->addCube({ 5, 0, -5 }, { 1, 1, 1 }, "Stone");*/
 	
-	for (size_t i = 0; i < 170; i+= 17)
+	for (size_t i = 0; i < 17; i+= 17)
 	{
 		game->m_engine.m_renderSystem->addChunk({ 0+i, 0, -10 }, { 16, 1, 16 }, "Grass");
 		game->m_engine.m_renderSystem->addChunk({ 0+i, -5, -10 }, { 16, 5, 16 }, "Dirt");

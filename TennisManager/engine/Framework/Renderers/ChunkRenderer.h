@@ -1,4 +1,5 @@
 #pragma once
+#include <unordered_map>
 #include "../../Tools/Shader/Shader.h"
 #include "../Entities/Camera.h"
 #include "../Entities/CubeEntity.h"
@@ -15,5 +16,6 @@ public:
 
 private:
 	std::vector<Chunk*> m_chunks;
-
+	std::unordered_map<std::string, std::vector<glm::vec3>> m_blocks;
+	std::vector<glm::vec3> m_positions;
 };

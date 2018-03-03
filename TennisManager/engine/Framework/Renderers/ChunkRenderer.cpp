@@ -15,21 +15,62 @@ void ChunkRenderer::addChunk(glm::vec3 position, glm::vec3 scale, const std::str
 	std::vector<float> texCoords;
 
 	for (int x = 0; x < scale.x; x++)
-		for (int y = 0; y < scale.y; y++)
-			for (int z = 0; z < scale.z; z++) {
-				if (z == 0)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, BACK);
-				if (z == scale.z - 1)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, FRONT);
-				if (y == 0)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, BOTTOM);
-				if (y == scale.y - 1)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, TOP);
-				if (x == 0)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, LEFT);
-				if (x == scale.x - 1)
-					addFace(verts, texCoords, position + glm::vec3(x, y, z), { 0.5f, 0.5f, 0.5f }, material, resManager, RIGHT);
+		for (int z = 0; z < scale.z; z++) 
+			for (int y = 0; y < scale.y; y++)
+			{
+				if (m_blocks.find(material) != m_blocks.end()) {
+					m_blocks[material].push_back(glm::vec3(x, y, z));
+				}
+				else {
+					m_blocks[material] = std::vector<glm::vec3>();
+					m_blocks[material].push_back(glm::vec3(x, y, z));
+				}
+				m_positions.push_back(glm::vec3(x, y, z));
 			}
+
+	for (auto& blockType : m_blocks) {
+		if (blockType.first != "Air")
+			for (auto& block_position : blockType.second) {
+				auto airBlocks = m_blocks["Air"];
+				// If next to air block or nothing
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x + 1, block_position.y, block_position.z)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x + 1, block_position.y, block_position.z)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, RIGHT);
+				}
+
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x - 1, block_position.y, block_position.z)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x - 1, block_position.y, block_position.z)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, LEFT);
+				}
+
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x, block_position.y + 1, block_position.z)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x, block_position.y + 1, block_position.z)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, TOP);
+				}
+
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x, block_position.y - 1, block_position.z)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x, block_position.y - 1, block_position.z)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, BOTTOM);
+				}
+
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x, block_position.y, block_position.z + 1)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x, block_position.y, block_position.z + 1)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, FRONT);
+				}
+				
+				if (std::find(airBlocks.begin(), airBlocks.end(), glm::vec3(block_position.x, block_position.y, block_position.z - 1)) != airBlocks.end()
+					|| std::find(m_positions.begin(), m_positions.end(), glm::vec3(block_position.x, block_position.y, block_position.z - 1)) == m_positions.end()
+					) {
+					addFace(verts, texCoords, position + block_position, { 0.5f, 0.5f, 0.5f }, material, resManager, BACK);
+				}
+			}
+	}
+
 	Texture* texture = resManager->getBlockData(material)->getTexture();
 	Chunk * chunk = new Chunk(verts, texCoords, *texture);
 	m_chunks.push_back(chunk);
