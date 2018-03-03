@@ -16,7 +16,7 @@ void ChunkRenderer::addChunk(glm::vec3 position, glm::vec3 scale, const std::str
 
 	for (int x = 0; x < scale.x; x++)
 		for (int z = 0; z < scale.z; z++) 
-			for (int y = 0; y < scale.y; y++)
+			for (int y = 0; y < scale.y + rand() % 5; y++)
 			{
 				if (m_blocks.find(material) != m_blocks.end()) {
 					m_blocks[material].push_back(glm::vec3(x, y, z));
