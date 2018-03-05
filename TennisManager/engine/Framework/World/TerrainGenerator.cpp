@@ -17,7 +17,5 @@ void TerrainGenerator::createTerrain(unsigned int height, glm::vec3 position, Re
 	}
 	// Create layers
 	m_chunkRenderer->addChunk(position, {16, 5, 16}, "Stone", resManager);
-	m_chunkRenderer->addChunk(position + glm::vec3(0, 5, 0), { 16, height - 5, 16 }, "Dirt", resManager);
-	m_chunkRenderer->addChunk(position + glm::vec3(0, height, 0), { 16, 1, 16 }, "Grass", resManager);
-
+	m_chunkRenderer->addChunk(position + glm::vec3(0, 5, 0), { 16, height - 5, 16 }, "Grass", resManager, true);
 }

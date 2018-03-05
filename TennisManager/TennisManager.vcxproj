@@ -144,6 +144,7 @@
     <ClInclude Include="engine\ResManager\ResManager.h" />
     <ClInclude Include="engine\SilenceEngine.h" />
     <ClInclude Include="engine\Tools\Math\Matrix.h" />
+    <ClInclude Include="engine\Tools\Math\Perlin.h" />
     <ClInclude Include="engine\Tools\Texture\stb_image.h" />
     <ClInclude Include="engine\System\EngineSystems.h" />
     <ClInclude Include="engine\System\InputSystem.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="engine\SilenceEngine.cpp" />
     <ClCompile Include="engine\System\InputSystem.cpp" />
     <ClCompile Include="engine\Tools\Math\Matrix.cpp" />
+    <ClCompile Include="engine\Tools\Math\Perlin.cpp" />
     <ClCompile Include="engine\Tools\Shader\Shader.cpp" />
     <ClCompile Include="engine\Tools\Texture\Texture.cpp" />
     <ClCompile Include="engine\Tools\Texture\TextureAtlas.cpp" />

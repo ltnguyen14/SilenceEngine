@@ -126,6 +126,9 @@
     <ClInclude Include="engine\Framework\World\TerrainGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Tools\Math\Perlin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Framework\Graphical.cpp">
@@ -213,6 +216,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\Framework\World\TerrainGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Tools\Math\Perlin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

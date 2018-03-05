@@ -11,7 +11,7 @@ public:
 	ChunkRenderer();
 	~ChunkRenderer();
 
-	void addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager);
+	void addChunk(glm::vec3 position, glm::vec3 scale, const std::string& material, ResManager* resManager, bool TERRAIN_GEN = false);
 	void renderChunks(Window* window, Camera* camera);
 
 private:
