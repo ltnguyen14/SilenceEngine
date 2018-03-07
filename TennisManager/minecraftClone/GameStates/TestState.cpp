@@ -8,8 +8,8 @@ TestState::TestState(StateManager* game)
 	game->m_engine.m_renderSystem->addCube({ -5, 0, -5 }, { 1, 1, 1 }, "Dirt");
 	game->m_engine.m_renderSystem->addCube({ 5, 0, -5 }, { 1, 1, 1 }, "Stone");*/
 	
-	for (size_t x = 0; x < 80; x += 16)
-		for (size_t z = 0; z < 80; z += 16)
+	for (size_t x = 0; x < 16; x += 16)
+		for (size_t z = 0; z < 16; z += 16)
 		{
 			game->m_engine.m_renderSystem->createTerrain(8, { x, 0, z });
 		}
